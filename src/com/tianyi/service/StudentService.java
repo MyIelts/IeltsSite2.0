@@ -11,14 +11,14 @@ public class StudentService {
 	}
 
 	public String save(String userName, String password,
-			String firstName, String lastName, String dateOfBirth,
+			String firstName, String phoneNumber, String accountType,
 			String emailAddress) {
 		if (studentRepository != null) {
 			if (studentRepository.findByUserName(userName)) {
 				return "SignupFailure-UserNameExists";
 			}
-			studentRepository.save(userName, password, firstName, lastName,
-					dateOfBirth, emailAddress);
+			studentRepository.save(userName, password, firstName, phoneNumber,
+					accountType, emailAddress);
 			return "SignupSuccess";
 		} else {
 			return "SignupFailure";

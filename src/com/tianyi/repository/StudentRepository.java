@@ -17,20 +17,21 @@ public class StudentRepository {
 	}
 
 	public void save(String userName, String password, String firstName,
-			String lastName, String dateOfBirth, String emailAddress) {
+			String phoneNumber, String accountType, String emailAddress) {
 		if (dbConnection != null) {
 			try {
 				PreparedStatement prepStatement = dbConnection
-						.prepareStatement("insert into Accounts(UserID,UserType,UserName,UserPwd, Name, Phone, Email, Status,IletsScore) values ('002','Student',?, ?, ?, ?, ?,'pending', '0')");
-				prepStatement.setString(1, userName);
-				prepStatement.setString(2, password);
-				prepStatement.setString(3, firstName);
-				prepStatement.setString(4, lastName);				
+						.prepareStatement("insert into Accounts(UserType,UserName,UserPwd, Name, Phone, Email, Status,IletsScore) values (?,?, ?, ?, ?, ?,'pending', '0')");
+				prepStatement.setString(1, accountType);
+				prepStatement.setString(2, userName);
+				prepStatement.setString(3, password);
+				prepStatement.setString(4, firstName);
+				prepStatement.setString(5, phoneNumber);				
 				
 				/*prepStatement.setDate(5, new java.sql.Date(new SimpleDateFormat("MM/dd/yyyy")
 				.parse(dateOfBirth.substring(0, 10)).getTime()));*/
 
-				prepStatement.setString(5, emailAddress);
+				prepStatement.setString(6, emailAddress);
 
 				prepStatement.executeUpdate();
 			} catch (SQLException e) {

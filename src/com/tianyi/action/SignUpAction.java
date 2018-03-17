@@ -9,8 +9,8 @@ public class SignUpAction extends ActionSupport {
 	
 	private String username;
 	private String password;
-	private String firstName;
-	private String lastName;
+	private String Name;
+	private String phoneNumber;
 	private String accountType;
 	private String emailAddress;
 	private String pageName;
@@ -27,17 +27,17 @@ public class SignUpAction extends ActionSupport {
     public void setPassword(String password) {
         this.password = password;
     }
-    public String getfirstNamed() {
-        return firstName;
+    public String getName() {
+        return Name;
     }
-    public void setfirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String Name) {
+        this.Name = Name;
     }
-    public String getlastName() {
-        return lastName;
+    public String getPhoneNO() {
+        return phoneNumber;
     }
-    public void setlastName(String lastName) {
-        this.lastName = lastName;
+    public void setPhoneNO(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
     public String getUserType() {
         return accountType;
@@ -56,14 +56,20 @@ public class SignUpAction extends ActionSupport {
      * 如果 账号="admin"并且密码="123456"，就返回SUCCESS
      * 否则返回ERROR
      */
+    
+    
+  //(String userName, String password, String firstName,
+  	//String phoneNumber, String accountType, String emailAddress) {
+    
+    
     public String execute(){
     	String result = "";
 		StudentService studentService = new StudentService();
 
 		if (pageName != null && studentService != null) {
 			if (pageName.equals("signup")) {
-				result = studentService.save(username, password, firstName,
-						lastName, accountType, emailAddress);
+				result = studentService.save(username, password, Name,
+						phoneNumber, accountType, emailAddress);
 				if (result.equals("SignupSuccess")) {
 					result= SUCCESS;
 				} else {
