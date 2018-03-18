@@ -13,7 +13,7 @@ public class SignUpAction extends ActionSupport {
 	private String username;
 	private String password;
 	private String Name;
-	private String phoneNumber;
+	private String phone;
 	private String accountType;
 	private String emailAddress;
 	private String pageName;
@@ -36,18 +36,19 @@ public class SignUpAction extends ActionSupport {
     public void setName(String Name) {
         this.Name = Name;
     }
-    public String getPhoneNO() {
-        return phoneNumber;
+    public String getPhone() {
+        return phone;
     }
-    public void setPhoneNO(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
-    public String getUserType() {
+    public String getaccountType() {
         return accountType;
     }
-    public void setUserType(String accountType) {
+    public void setaccountType(String accountType) {
         this.accountType = accountType;
     }
+    
    /* public String getEmail() {
     	
         return emailAddress;
@@ -70,13 +71,13 @@ public class SignUpAction extends ActionSupport {
     public String execute(){
     	String insertResult = "";
     	System.out.println(username+" "+password+" "+Name+" "+
-				phoneNumber+" "+ accountType+" "+ emailAddress);
+    			phone+" "+ accountType+" "+ emailAddress);
 		StudentService studentService = new StudentService();
 
 		if ( studentService != null) {
 		
 			insertResult = studentService.save(username, password, Name,
-						phoneNumber, accountType, emailAddress);
+					phone, accountType, emailAddress);
 							
 		}
 		if (insertResult.equals("SignupSuccess")) {
