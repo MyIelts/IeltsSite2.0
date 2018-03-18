@@ -97,16 +97,16 @@ input[type="text"],input[type="password"] {
 							<fieldset>
 								<legend>注册信息</legend>
 
-								<s:textfield label="用户名" name="userName"
+								<s:textfield label="用户名" name="username"
 									cssClass="col-lg-11" placeholder="User Name" />
 
 								<s:password label="密码" name="password"
 									cssClass="col-lg-11" placeholder="Password" />
 
-								<s:textfield label="昵称" name="firstName"
+								<s:textfield label="昵称" name="Name"
 									cssClass="col-lg-11" placeholder="First Name" />
 
-								<s:textfield label="电话" name="phone"
+								<s:textfield label="电话" name="phoneNumber"
 									cssClass="col-lg-11" placeholder="Last Name" />
 								
 								<s:select name="accountType" list="#{'student':'学生','teacher':'老师','admin':'管理员' }" label="账户类型" headerKey="" headerValue="请选择用户类型"

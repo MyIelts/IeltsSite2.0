@@ -2,6 +2,9 @@ package com.tianyi.action;
 
 import com.tianyi.service.StudentService;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.validator.annotations.EmailValidator;
+import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
+import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 
 public class SignUpAction extends ActionSupport {
 
@@ -45,44 +48,42 @@ public class SignUpAction extends ActionSupport {
     public void setUserType(String accountType) {
         this.accountType = accountType;
     }
-    public String getEmail() {
+   /* public String getEmail() {
+    	
         return emailAddress;
     }
     public void setEmail(String emailAddress) {
         this.emailAddress = emailAddress;
-    }
-    /**
-     * execute方法会在该Action类被调用的时候自动执行,
-     * 如果 账号="admin"并且密码="123456"，就返回SUCCESS
-     * 否则返回ERROR
-     */
-    
+    }*/
+    public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
     
   //(String userName, String password, String firstName,
   	//String phoneNumber, String accountType, String emailAddress) {
     
     
     public String execute(){
-    	String result = "";
+    	String insertResult = "";
+    	System.out.println(username+" "+password+" "+Name+" "+
+				phoneNumber+" "+ accountType+" "+ emailAddress);
 		StudentService studentService = new StudentService();
 
-		if (pageName != null && studentService != null) {
-			if (pageName.equals("signup")) {
-				result = studentService.save(username, password, Name,
+		if ( studentService != null) {
+		
+			insertResult = studentService.save(username, password, Name,
 						phoneNumber, accountType, emailAddress);
-				if (result.equals("SignupSuccess")) {
-					result= SUCCESS;
-				} else {
-					result= ERROR;
-				}
-			}
+							
 		}
-		return result;
-    	/*System.out.println(username+" hey "+password);
-        if(username.equalsIgnoreCase("admin") && password.equalsIgnoreCase("123456")){
-            return SUCCESS;
-        }
-        else
-            return ERROR;*/
+		if (insertResult.equals("SignupSuccess")) {
+			return SUCCESS;
+		} else {
+			return ERROR;
+		}
+
     }
 }
