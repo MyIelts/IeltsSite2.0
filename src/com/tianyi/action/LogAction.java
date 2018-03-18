@@ -1,15 +1,19 @@
 package com.tianyi.action;
 
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.tianyi.service.StudentService;
 
-public class LogAction extends ActionSupport {
+public class LogAction extends ActionSupport implements SessionAware {
 
 	private static final long serialVersionUID = 1L;
 	private String username;// 账号
 	private String password;// 密码
-
-	// getters & setters
+    private Map<String,Object> session;
+    // getters & setters
 	public String getUsername() {
 		return username;
 	}
@@ -30,6 +34,10 @@ public class LogAction extends ActionSupport {
 	 * execute方法会在该Action类被调用的时候自动执行, 如果 账号="admin"并且密码="123456"，就返回SUCCESS
 	 * 否则返回ERROR
 	 */
+	public void setSession(Map<String,Object> session) {
+		this.session=session;
+	}
+	
 	public String execute() {
 
 		String queryResult = "";
@@ -41,7 +49,10 @@ public class LogAction extends ActionSupport {
            System.out.println(queryResult);
 		if (queryResult.equals("LoginFailure")) {
 			return ERROR;
-		} else {return SUCCESS;
+		} else {
+			session.put("user",username );
+			session.put("pw",password );
+			return SUCCESS;
 		}
 	
 }}

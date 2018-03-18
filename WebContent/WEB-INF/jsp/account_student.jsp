@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -135,11 +136,14 @@
 		<div class="col-md-10 column">
 			<h1 class="page-header">
 				<i class="fa fa-cog fa-spin"></i>&nbsp;学生个人主页<small>&nbsp;&nbsp;&nbsp;欢迎来到学生个人主页</small>
-			</h1>
 
 			<!-- 载入左侧菜单指向的jsp（或html等）页面内容 -->
 			<div id="content">
-
+			
+               <%--  <h1>
+                <s:property value="#session.user"></s:property>>
+			</h1> --%>
+                </h1>
 				<h4>
 					<strong>使用指南：</strong><br> <br> <br>默认页面内容……
 				</h4>

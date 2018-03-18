@@ -107,16 +107,12 @@ input[type="text"],input[type="password"] {
 									cssClass="col-lg-11" placeholder="First Name" />
 
 								<s:textfield label="电话" name="phone"
-									cssClass="col-lg-11" placeholder="Last Name" />
+									cssClass="col-lg-11" placeholder="phone Number" />
 								
 								<s:select name="accountType" list="#{'student':'学生','teacher':'老师','admin':'管理员' }" label="账户类型" headerKey="" headerValue="请选择用户类型"
 									cssClass="col-lg-11" placeholder="account Type" />
-
-								<sj:datepicker id="dateOfBirthInput" name="dateOfBirth"
-									label="Date of Birth" cssClass="col-lg-11"
-									displayFormat="mm/dd/yy" parentTheme="bootstrap"
-									placeholder="Date Of Birth" changeMonth="true" changeYear="true"
-									buttonImageOnly="true" yearRange="c-100:c+0" /> 
+									
+								
 
 								<s:textfield label="电子邮件" name="emailAddress"
 									cssClass="col-lg-11" placeholder="Email Address" />

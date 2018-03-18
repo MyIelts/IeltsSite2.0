@@ -1,6 +1,7 @@
 package com.tianyi.action;
 
 import com.tianyi.service.StudentService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.validator.annotations.EmailValidator;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
@@ -69,6 +70,9 @@ public class SignUpAction extends ActionSupport {
     
     
     public String execute(){
+    	
+    	
+    	
     	String insertResult = "";
     	System.out.println(username+" "+password+" "+Name+" "+
     			phone+" "+ accountType+" "+ emailAddress);
@@ -81,6 +85,8 @@ public class SignUpAction extends ActionSupport {
 							
 		}
 		if (insertResult.equals("SignupSuccess")) {
+			
+			
 			return SUCCESS;
 		} else {
 			return ERROR;
