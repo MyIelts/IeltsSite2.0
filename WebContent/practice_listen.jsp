@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
@@ -58,32 +59,36 @@ body {
 					</ul></li>
 			</ul>
 		</div>
-		</div>
+	</div>
 
 	<div class="col-lg-6 col-lg-offset-3">
 		<div class="well">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<div>
-							<h3>听写题目</h3>
-						</div>
-						<hr />
-						<div>
-							<h4>
-								听写内容：</br> </br> 距离2016里约奥运会开幕式还有三个月左右的时间，里约准备好了吗？
-							</h4>
-						</div>
-						<hr />
-						<audio id="audioId" src="assets/audio/test.mp3"
-							controls="controls" preload="auto">
-						</audio>
-					 	<textarea cols=40 rows=10 name=text class="textbox"></textarea>
-						
-						<div class="col-lg-offset-7" text-align:center>
-							<button type="button">提交</button>
-						</div>
+						<s:form id="myForm" action="checkscript" theme="bootstrap"
+							validate="true" cssClass="bs-example form-horizontal"
+							method="post">
+							<div>
+								<h3>听写题目</h3>
+							</div>
+							<hr />
+							<div>
+								<h4>
+									听写内容：</br> </br> 距离2016里约奥运会开幕式还有三个月左右的时间，里约准备好了吗？
+								</h4>
+							</div>
+							<hr />
+							<audio id="audioId" src="assets/audio/test.mp3"
+								controls="controls" preload="auto">
+							</audio>
+							<textarea cols=40 rows=10 name=listenText class="textbox"></textarea>
 
+							<div class="col-lg-offset-7" text-align:center>
+
+								<button type="button">提交</button>
+							</div>
+						</s:form>
 					</div>
 				</div>
 			</div>
@@ -107,12 +112,14 @@ body {
 		<div></div>
 	</div> -->
 	<script src="jquery-1.8.3.js">
-</script>
+		
+	</script>
 
 	<script src="bootstrap/js/bootstrap.js">
-</script>
+		
+	</script>
 
-<script>
+	<script>
 		$(function() {
 			$("#audioId").audioPlayer();
 		})
