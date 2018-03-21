@@ -21,7 +21,7 @@ body {
 	FONT-SIZE: 14px;
 	TEXT-ALIGN: LIFT;
 	height: 400px;
-	width: 695px;
+	width: 850px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	resize: none;
@@ -66,7 +66,7 @@ body {
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<s:form id="myForm" action="checkscript" theme="bootstrap"
+						<s:form id="myForm"  action="checkscript" theme="bootstrap"
 							validate="true" cssClass="bs-example form-horizontal"
 							method="post">
 							<div>
@@ -84,7 +84,7 @@ body {
 							</audio>
 							<textarea cols=40 rows=10 name=listenText class="textbox"></textarea>
 
-							<div class="col-lg-offset-7" text-align:center>
+							<div>
 
 								<button type="button">提交</button>
 							</div>
