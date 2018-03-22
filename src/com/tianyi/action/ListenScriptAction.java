@@ -11,8 +11,8 @@ public class ListenScriptAction extends ActionSupport  {
 
 	private static final long serialVersionUID = 1L;
 	private String username;// ’À∫≈
-	private String listenText;// √‹¬Î
-	   private Map<String,Object> dataMap;
+	private String usertext;// √‹¬Î
+	
     // getters & setters
 	public String getUsername() {
 		return username;
@@ -22,23 +22,21 @@ public class ListenScriptAction extends ActionSupport  {
 		this.username = username;
 	}
 
-	public String getlistenText() {
-		return listenText;
+	public String getUsertext() {
+		return usertext;
 	}
 
-	public void setlistenText(String listenText) {
-		this.listenText = listenText;
+	public void setUsertext(String usertext) {
+		this.usertext = usertext;
 	}
+
 
  
 	
 	public String execute() {
-
+		usertext="process script";
 	
-		dataMap.put("listenScript", listenText);  
-	    dataMap.put("success", true);  
-	    System.out.println("Goes here");
-		if (listenText.equals("")) {
+		if (usertext.equals("")) {
 			return ERROR;
 		} else {
 		

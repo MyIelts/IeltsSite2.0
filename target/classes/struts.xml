@@ -13,6 +13,10 @@
             <result name="success">WEB-INF/jsp/account_student.jsp</result>
             <result name="error">WEB-INF/jsp/signup-failure.jsp</result>
         </action>
+          <action name="loginlogin" class="com.tianyi.action.ListenScriptAction">
+            <result name="success">WEB-INF/jsp/account_student.jsp</result>
+            <result name="error">WEB-INF/jsp/login-failure.jsp</result>
+        </action>
     </package>
 
 </struts>

@@ -21,7 +21,7 @@ body {
 	FONT-SIZE: 14px;
 	TEXT-ALIGN: LIFT;
 	height: 400px;
-	width: 850px;
+	width: 695px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	resize: none;
@@ -66,28 +66,59 @@ body {
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<s:form id="myForm"  action="checkscript" theme="bootstrap"
+
+						<!-- <div>
+							<h3>听写题目</h3>
+						</div>
+						<hr />
+						<div>
+							<h4>
+								听写内容：</br> </br> 距离2016里约奥运会开幕式还有三个月左右的时间，里约准备好了吗？
+							</h4>
+						</div>
+						<hr />
+						<audio id="audioId" src="assets/audio/test.mp3"
+							controls="controls" preload="auto">
+						</audio>
+						<textarea cols=40 rows=10 name=listenText class="textbox"></textarea>
+
+						<div class="col-lg-offset-7" text-align:center>
+
+							<button type="button">提交</button>
+						</div> -->
+
+
+
+						<s:form id="myForm" action="loginlogin" theme="bootstrap"
 							validate="true" cssClass="bs-example form-horizontal"
 							method="post">
-							<div>
-								<h3>听写题目</h3>
-							</div>
-							<hr />
-							<div>
-								<h4>
-									听写内容：</br> </br> 距离2016里约奥运会开幕式还有三个月左右的时间，里约准备好了吗？
-								</h4>
-							</div>
-							<hr />
-							<audio id="audioId" src="assets/audio/test.mp3"
-								controls="controls" preload="auto">
-							</audio>
-							<textarea cols=40 rows=10 name=listenText class="textbox"></textarea>
+							<fieldset>
+								<div>
+									<h3>听写题目</h3>
+								</div>
+								<hr />
+								<div>
+									<h4>
+										听写内容：</br> </br> 距离2016里约奥运会开幕式还有三个月左右的时间，里约准备好了吗？
+									</h4>
+								</div>
+								<hr />
+								<audio id="audioId" src="assets/audio/test.mp3"
+									controls="controls" preload="auto">
+								</audio>
+								<textarea cols=40 rows=10 name=usertext class="textbox"></textarea>
+							<%-- 	<s:textfield label="用户名" name="username" cssClass="col-lg-12"
+									placeholder="User Name" /> --%>
 
-							<div>
+								<%-- <s:textfield label="文本" name="usertext" cssClass="col-lg-12"
+									placeholder="User Name" /> --%>
+                                  <s:property value="password"></s:property>
+								<div class="col-lg-9 col-lg-offset-3">
+									<s:submit cssClass="btn btn-default" value="取消" />
+									<s:submit cssClass="btn btn-primary" value="提交" />
+								</div>
 
-								<button type="button">提交</button>
-							</div>
+							</fieldset>
 						</s:form>
 					</div>
 				</div>
