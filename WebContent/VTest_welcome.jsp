@@ -7,7 +7,7 @@
 <link rel="stylesheet"
 	href="bootstrap\css\font-awesome-4.7.0\css\font-awesome.css">
 <link rel="stylesheet" type="text/css" href="bootstrap\css\css.css" />
-
+<link rel="stylesheet" href="bootstrap\css\button.css">
 <style>
 body {
 	height: 100%;
@@ -16,41 +16,26 @@ body {
 </style>
 
 <style>
-.title {
+.tittle {
 	font-family: 'Raleway', sans-serif;
-	font-size: 15px;
+	font-weight: bold;
+	font-size: 25px;
 	padding-left: 0;
 	margin-left: 0;
 }
 </style>
+
 <style>
-.test1 {
-	border: 1px solid #ccc;
-	padding: 14px;
-	border-radius: 15px;
+.content {
+	font-family: 'Raleway', sans-serif;
+	font-weight: lighter;
+	font-size: 20px;
+	padding-left: 0;
+	margin-left: 0;
+	margin-bottom: 15px;
 }
 </style>
-<style>
-ul.testtest {
-	width: 840px;
-	height: auto;
-	list-style-type: none;
-	margin: 5px 5px;
-	padding: 0;
-}
 
-ul.testtest li {
-	width: 380px;
-	float: left;
-	display: inline;
-	margin: 15px 5px;
-	height: 100px;
-}
-
-ul.testtest p {
-	overflow: hidden;
-}
-</style>
 </head>
 <body>
 	<div class="navbar navbar-default">
@@ -117,55 +102,29 @@ ul.testtest p {
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="col-md-9 column">
-							<h1 class="page-header">
-								<i class="fa fa-cog fa-spin"></i>&nbsp;欢迎来到分Topic写作练习模块
-							</h1>
-							<div class="whole">
-								<div class="leftdiv">
-									<dl>
-										<dt>Topics</dt>
-										<dd>
-											<a href="#"><i class="fa fa-graduation-cap fa-fw"></i>&nbsp;教育类</a>
-											<a href="#"><i class="fa fa-university fa-fw"></i>&nbsp;政府类</a>
-											<a href="#"><i class="fa fa-users fa-fw"></i>&nbsp;社会类</a> <a
-												href="#"><i class="fa fa-heartbeat fa-fw"></i>&nbsp;健康类</a>
-											<a href="#"><i class="fa fa-youtube-play fa-fw"></i>&nbsp;媒体类</a>
-											<a href="#"><i class="fa fa-recycle fa-fw"></i>&nbsp;环保类</a>
-											<a href="#"><i class="fa fa-plane fa-fw"></i>&nbsp;科技发明类</a>
-											<a href="#"><i class="fa fa-legal fa-fw"></i>&nbsp;犯罪法律类</a>
-											<a href="#"><i class="fa fa-language fa-fw"></i>&nbsp;文化类</a>
-										</dd>
-									</dl>
+							<div class="col-md-10 column">
+								<h1 class="page-header">
+									<i class="fa fa-spinner fa-pulse"></i>&nbsp;词汇量测评<small>&nbsp;&nbsp;&nbsp;欢迎来到词汇量测评</small>
+
+									<!-- 载入左侧菜单指向的jsp（或html等）页面内容 -->
+									<div id="content">
+
+										<h1></h1>
+								</h1>
+
+								<p class="tittle">测评说明：</p>
+								<br/>
+								<div class="content">
+									<p>本次词汇量测评将花费您8-10分钟的时间。</p>
+									<p>为得到客观的词汇量测评结果，请勿在测评过程中使用词典。</p>
+									<p>本测试仅供参考。</p>
 								</div>
-							</div>
-
-
-							<div class="test1">
-								<ul class="testtest">
-
-									<li class="title"><a href="#">BBC新闻</a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
-										</div></li>
-									<li class="title"><a href="#">BBC新闻</a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
-										</div></li>
-
-									<li class="title"><a href="#">BBC新闻</a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
-										</div></li>
-									<li class="title"><a href="#">BBC新闻</a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
-										</div></li>
-									<div style="clear: both;"></div>
-								</ul>
+								<span class="button-wrap"> <a
+									href="http://www.bootcss.com/" class="button button-pill ">开始测评&nbsp;<i
+										class="fa fa-arrow-right"></i></a>
+								</span>
+								
+								
 							</div>
 
 						</div>
@@ -201,7 +160,11 @@ ul.testtest p {
 	<script src="bootstrap/js/bootstrap.js">
 		
 	</script>
-
+	<script>
+		function tz() {
+			window.location.href = '目标网址';
+		}
+	</script>
 	<script>
 		$(function() {
 			$("#audioId").audioPlayer();
