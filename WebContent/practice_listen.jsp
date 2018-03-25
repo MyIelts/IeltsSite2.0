@@ -88,8 +88,11 @@ body {
 						</div> -->
 
 
-
-						<s:form id="myForm" action="loginlogin" theme="bootstrap"
+ 
+  
+     
+   
+						<s:form id="myForm" action="proessScript" theme="bootstrap"
 							validate="true" cssClass="bs-example form-horizontal"
 							method="post">
 							<fieldset>
@@ -106,7 +109,10 @@ body {
 								<audio id="audioId" src="assets/audio/test.mp3"
 									controls="controls" preload="auto">
 								</audio>
-								<textarea cols=40 rows=10 name=usertext class="textbox"></textarea>
+								
+								
+								
+								<textarea cols=40 rows=10 name=usertext class="textbox"><s:property value="#parameters.t"/> </textarea>
 							<%-- 	<s:textfield label="用户名" name="username" cssClass="col-lg-12"
 									placeholder="User Name" /> --%>
 
@@ -149,7 +155,17 @@ body {
 	<script src="bootstrap/js/bootstrap.js">
 		
 	</script>
-
+   <%--  <script>
+		$(function() {
+			$.ajax({  
+			      url : "",  
+			      type : 'post',  
+			      success : function(data) {  
+			             console.info(data.usertext.info);  
+			      }  
+			}); 
+		})
+	</script> --%>
 	<script>
 		$(function() {
 			$("#audioId").audioPlayer();
