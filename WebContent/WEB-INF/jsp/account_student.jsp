@@ -50,7 +50,7 @@
 						<li class="divider"></li>
 						<li><a href="#">分话题写作练习</a></li>
 					</ul></li>
-				<li><a href="listening">听力练习</a></li>
+				<li><a href="listen_topics.jsp">听力练习</a></li>
 
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">口语练习<b class="caret"></b></a>

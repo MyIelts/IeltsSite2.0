@@ -67,9 +67,14 @@ ul.testtest p {
 
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="StudentEnrollmentWithStruts">主页</a></li>
-				<li><a href="signup.jsp">注册</a></li>
-				<li><a href="login.jsp">登录</a></li>
-
+			
+                   <s:if test="#session.user=null">
+						<li><a href="signup-input">注册</a></li>
+						<li><a href="login-input">登录</a></li>
+					</s:if>
+					<s:else>
+					<li><a href="logout-input">退出登录</a></li>
+					</s:else>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">更多<b class="caret"></b></a>
 					<ul class="dropdown-menu">
@@ -99,7 +104,7 @@ ul.testtest p {
 
 								<ul class="sonarmenu">
 
-									<li><a href="StudentEnrollmentWithStruts">初级</a></li>
+									<li><a href="displayTopics?levels=Rookie">初级</a></li>
 									<li><a href="signup.jsp">中级</a></li>
 									<li><a href="login.jsp">中高级</a></li>
 									<li><a href="login.jsp">高级</a></li>

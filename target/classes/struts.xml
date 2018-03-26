@@ -16,6 +16,9 @@
           <action name="proessScript" class="com.tianyi.action.ListenScriptAction">
            <result type="redirect">practice_listen.jsp?t=${usertext}</result>
         </action>  
+         <action name="displayTopics" class="com.tianyi.action.ListeningTopicsAction">
+           <result type="redirect">listen_topics.jsp?l=${topiclist}</result>
+        </action> 
         
     </package>
 
