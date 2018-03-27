@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.tianyi.repository.TopicsRepository;
 import com.tianyi.service.StudentService;
@@ -13,7 +14,9 @@ import com.tianyi.service.StudentService;
 public class ListeningTopicsAction extends ActionSupport{
 	List<String> topiclist=new ArrayList<>();
 	
-	private String levelname;// ук╨е
+	private String levelname;
+	private String title1;
+	private String intro1;
 	TopicsRepository TRepository=new TopicsRepository();
 
 	
@@ -27,9 +30,10 @@ public class ListeningTopicsAction extends ActionSupport{
 	    public String execute() {
             
             
-	    	//topiclist=TRepository.getTopicList(levelname);
-	    	topiclist.add("hey");
-	    	topiclist.add("you");
+	    	topiclist=TRepository.getTopicList(levelname);
+	    	title1=topiclist.get(1);
+	    	intro1=topiclist.get(2);
+	    
 			return SUCCESS;
 		
 	

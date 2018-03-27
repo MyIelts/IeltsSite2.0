@@ -17,7 +17,7 @@
            <result type="redirect">practice_listen.jsp?t=${usertext}</result>
         </action>  
          <action name="displayTopics" class="com.tianyi.action.ListeningTopicsAction">
-           <result type="redirect">listen_topics.jsp?l=${topiclist}</result>
+           <result type="redirect">listen_topics.jsp?field1=${title1}&amp;field2=${intro1}</result>
         </action> 
         
     </package>

@@ -112,16 +112,10 @@ ul.testtest p {
 
 							</div>
 							<hr />
-
+                      <s:property value="#parameters.field1"/>
+                  
 							<div class="test1">
 								<ul class="testtest">
-									<s:iterator value="#parameters.l" >
-
-										<tr>
-											<td><s:property value="topic" /></td>
-											<td><s:property value="intro" /></td>
-										</tr>
-									</s:iterator>
 									<li class="title"><a href="#">BBC新闻</a>
 										<div class="fr ml10 menu_detail">
 											<p class="intro">
