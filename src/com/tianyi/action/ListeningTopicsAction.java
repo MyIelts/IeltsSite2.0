@@ -12,21 +12,24 @@ import com.tianyi.service.StudentService;
 
 public class ListeningTopicsAction extends ActionSupport{
 	List<String> topiclist=new ArrayList<>();
-	private String levels;
+	
+	private String levelname;// ук╨е
 	TopicsRepository TRepository=new TopicsRepository();
-	public String getlevels() {
-		
-		return levels;
+
+	
+	public String getLevelname() {
+		return levelname;
 	}
 
-	public void setlevels(String levels) {
-		this.levels = levels;
+	public void setLevelname(String levelname) {
+		this.levelname = levelname;
 	}
 	    public String execute() {
-            System.out.println(levels);
             
-	    	topiclist=TRepository.getTopicList("Rookie");
-	    	System.out.println(topiclist.get(2));
+            
+	    	//topiclist=TRepository.getTopicList(levelname);
+	    	topiclist.add("hey");
+	    	topiclist.add("you");
 			return SUCCESS;
 		
 	

@@ -67,14 +67,14 @@ ul.testtest p {
 
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="StudentEnrollmentWithStruts">主页</a></li>
-			
-                   <s:if test="#session.user=null">
-						<li><a href="signup-input">注册</a></li>
-						<li><a href="login-input">登录</a></li>
-					</s:if>
-					<s:else>
+
+				<s:if test="#session.user=null">
+					<li><a href="signup-input">注册</a></li>
+					<li><a href="login-input">登录</a></li>
+				</s:if>
+				<s:else>
 					<li><a href="logout-input">退出登录</a></li>
-					</s:else>
+				</s:else>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">更多<b class="caret"></b></a>
 					<ul class="dropdown-menu">
@@ -104,7 +104,7 @@ ul.testtest p {
 
 								<ul class="sonarmenu">
 
-									<li><a href="displayTopics?levels=Rookie">初级</a></li>
+									<li><a href="displayTopics?levelname=Rookie">初级</a></li>
 									<li><a href="signup.jsp">中级</a></li>
 									<li><a href="login.jsp">中高级</a></li>
 									<li><a href="login.jsp">高级</a></li>
@@ -115,19 +115,25 @@ ul.testtest p {
 
 							<div class="test1">
 								<ul class="testtest">
+									<s:iterator value="#parameters.l" >
+
+										<tr>
+											<td><s:property value="topic" /></td>
+											<td><s:property value="intro" /></td>
+										</tr>
+									</s:iterator>
+									<li class="title"><a href="#">BBC新闻</a>
+										<div class="fr ml10 menu_detail">
+											<p class="intro">
+												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
+										</div></li>
+									<li class="title"><a href="#">BBC新闻</a>
+										<div class="fr ml10 menu_detail">
+											<p class="intro">
+												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
+										</div></li>
 
 									<li class="title"><a href="#">BBC新闻</a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
-										</div></li>
-									<li class="title"><a href="#">BBC新闻</a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
-										</div></li>
-										
-										<li class="title"><a href="#">BBC新闻</a>
 										<div class="fr ml10 menu_detail">
 											<p class="intro">
 												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
@@ -182,6 +188,8 @@ ul.testtest p {
 		<script src="jquery-1.8.3.js">
 	</script>
 	<script src="audioplayer.js">
+		
+	
 		
 	</script>
 </body>
