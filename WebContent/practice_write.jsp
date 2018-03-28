@@ -18,7 +18,7 @@ body {
 	BORDER-RIGHT: #7F9DB9 1px solid;
 	BORDER-BOTTOM: #7F9DB9 1px solid;
 	FONT-FAMILY: "宋体", "Verdana", "Arial", "Helvetica";
-	FONT-SIZE: 14px;
+	FONT-SIZE: 16px;
 	TEXT-ALIGN: LIFT;
 	height: 400px;
 	width: 860px;
@@ -27,7 +27,6 @@ body {
 	resize: none;
 }
 </style>
-
 <style type="text/css">
 .foot {
 	width: 100%;
@@ -46,9 +45,34 @@ body {
 	line-height: 30px;
 }
 </style>
-
+<style>
+#mytime {
+	text-align: center;
+}
+</style>
+<script>
+	function two_char(n) {
+		return n >= 10 ? n : "0" + n;
+	}
+	function time_fun() {
+		var sec = 0;
+		setInterval(function() {
+			sec++;
+			var date = new Date(0, 0)
+			date.setSeconds(sec);
+			var h = date.getHours(), m = date.getMinutes(), s = date
+					.getSeconds();
+			document.getElementById("mytime").innerText = two_char(h) + ":"
+					+ two_char(m) + ":" + two_char(s);
+		}, 1000);
+	
+	}
+	function stopTimer(){
+        clearTimeout(mytime);
+    }
+</script>
 </head>
-<body>
+<body onload="time_fun()">
 	<div class="navbar navbar-default">
 
 		<div class="navbar-header">
@@ -84,7 +108,7 @@ body {
 		<div class="well">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-6">
+					<div class="col-lg-9">
 
 						<!-- <div>
 							<h3>听写题目</h3>
@@ -107,45 +131,45 @@ body {
 						</div> -->
 
 
- 
-  
-     
-   
+
+
+
+
 						<s:form id="myForm" action="proessScript" theme="bootstrap"
 							validate="true" cssClass="bs-example form-horizontal"
 							method="post">
 							<fieldset>
 								<div>
-									<h3>听写题目</h3>
+									<h3>写作练习</h3>
 								</div>
 								<hr />
 								<div>
-									<h4>
-										听写内容：</br> </br> 距离2016里约奥运会开幕式还有三个月左右的时间，里约准备好了吗？
-									</h4>
+									<p style="font-size: 18px; line-height: 24px">
+										写作题目：</br> </br> Consumers are faced with increasing numbers of
+										advertisements from competing companies. To what extent do you
+										think are consumers influenced by advertisements? What
+										measures can be taken to protect them?
+									</p>
 								</div>
 								<hr />
-								<audio id="audioId" src="assets/audio/test.mp3"
-									controls="controls" preload="auto">
-								</audio>
-								
-								
-								
-								<textarea cols=40 rows=10 name=usertext class="textbox"><s:property value="#parameters.t"/> </textarea>
-							<%-- 	<s:textfield label="用户名" name="username" cssClass="col-lg-12"
+								<h2 id="mytime">00:00:00</h2>
+								<textarea cols=40 rows=10 name=usertext class="textbox"><s:property
+										value="#parameters.t" /> </textarea>
+								<%-- 	<s:textfield label="用户名" name="username" cssClass="col-lg-12"
 									placeholder="User Name" /> --%>
 
 								<%-- <s:textfield label="文本" name="usertext" cssClass="col-lg-12"
 									placeholder="User Name" /> --%>
-                                  <s:property value="password"></s:property>
+								<s:property value="password"></s:property>
 								<div class="foot">
 									<ul>
 										<li><s:submit onclick="myStopFunction()"
 												cssClass="btn btn-default" value="取消" /></li>
-										<li><s:submit onclick="myStopFunction()"
+										<li><s:submit onclick="stopTimer()"
 												cssClass="btn btn-primary" value="提交" /></li>
 									</ul>
 								</div>
+
 							</fieldset>
 						</s:form>
 					</div>
@@ -177,7 +201,7 @@ body {
 	<script src="bootstrap/js/bootstrap.js">
 		
 	</script>
-   <%--  <script>
+	<%--  <script>
 		$(function() {
 			$.ajax({  
 			      url : "",  
@@ -197,6 +221,12 @@ body {
 	</script>
 	<script src="audioplayer.js">
 		
+	</script>
+
+	<script>
+		function myStopFunction() {
+			clearInterval(document.getElementById("mytime").innerText);
+		}
 	</script>
 </body>
 </html>

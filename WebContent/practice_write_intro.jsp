@@ -4,6 +4,7 @@
 <head>
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
 <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+<link rel="stylesheet" href="bootstrap\css\button.css">
 <style>
 body {
 	height: 100%;
@@ -18,7 +19,7 @@ body {
 	BORDER-RIGHT: #7F9DB9 1px solid;
 	BORDER-BOTTOM: #7F9DB9 1px solid;
 	FONT-FAMILY: "宋体", "Verdana", "Arial", "Helvetica";
-	FONT-SIZE: 14px;
+	FONT-SIZE: 16px;
 	TEXT-ALIGN: LIFT;
 	height: 400px;
 	width: 860px;
@@ -27,25 +28,11 @@ body {
 	resize: none;
 }
 </style>
-
 <style type="text/css">
-.foot {
-	width: 100%;
-	height: 30px;
-	text-align: center;
-}
-
-.foot ul {
-	display: inline;
-	margin-left: -60px;
-}
-
-.foot ul li {
-	display: inline-block;
-	margin-left: 20px;
-	line-height: 30px;
-}
-</style>
+    .foot{width: 100%; height: 30px; text-align: center;}
+    .foot ul{display: inline; margin-left: -60px;}
+    .foot ul li{display: inline-block; margin-left: 20px; line-height: 30px;}
+    </style>
 
 </head>
 <body>
@@ -84,7 +71,7 @@ body {
 		<div class="well">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-6">
+					<div class="col-lg-9">
 
 						<!-- <div>
 							<h3>听写题目</h3>
@@ -116,36 +103,21 @@ body {
 							method="post">
 							<fieldset>
 								<div>
-									<h3>听写题目</h3>
+									<h3>写作练习</h3>
 								</div>
 								<hr />
 								<div>
-									<h4>
-										听写内容：</br> </br> 距离2016里约奥运会开幕式还有三个月左右的时间，里约准备好了吗？
-									</h4>
+									<p style="font-size:18px;line-height:24px">
+										写作题目：</br> </br> Consumers are faced with increasing numbers of advertisements from competing companies. To what extent do you think are consumers influenced by advertisements? What measures can be taken to protect them?
+									</p>
 								</div>
 								<hr />
-								<audio id="audioId" src="assets/audio/test.mp3"
-									controls="controls" preload="auto">
-								</audio>
 								
-								
-								
-								<textarea cols=40 rows=10 name=usertext class="textbox"><s:property value="#parameters.t"/> </textarea>
-							<%-- 	<s:textfield label="用户名" name="username" cssClass="col-lg-12"
-									placeholder="User Name" /> --%>
+							<span class="button-wrap"> <a
+									href="practice_write.jsp" class="button button-pill ">开始练习&nbsp;<i
+										class="fa fa-arrow-right"></i></a>
+								</span>
 
-								<%-- <s:textfield label="文本" name="usertext" cssClass="col-lg-12"
-									placeholder="User Name" /> --%>
-                                  <s:property value="password"></s:property>
-								<div class="foot">
-									<ul>
-										<li><s:submit onclick="myStopFunction()"
-												cssClass="btn btn-default" value="取消" /></li>
-										<li><s:submit onclick="myStopFunction()"
-												cssClass="btn btn-primary" value="提交" /></li>
-									</ul>
-								</div>
 							</fieldset>
 						</s:form>
 					</div>

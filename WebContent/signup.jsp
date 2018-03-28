@@ -117,7 +117,7 @@ input[type="text"],input[type="password"] {
 								<s:textfield label="电子邮件" name="emailAddress"
 									cssClass="col-lg-11" placeholder="Email Address" />
 
-								<div class="col-lg-9 col-lg-offset-3">
+								<div class="col-lg-4 col-lg-offset-3">
 									<s:submit cssClass="btn btn-default" value="取消" />
 									<s:submit cssClass="btn btn-primary" value="确定"
 										data-toggle="modal" data-target="#themodal" />
