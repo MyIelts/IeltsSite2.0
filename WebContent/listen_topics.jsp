@@ -105,9 +105,9 @@ ul.testtest p {
 								<ul class="sonarmenu">
 
 									<li><a href="displayTopics?levelname=Rookie">初级</a></li>
-									<li><a href="signup.jsp">中级</a></li>
-									<li><a href="login.jsp">中高级</a></li>
-									<li><a href="login.jsp">高级</a></li>
+									<li><a href="displayTopics?levelname=Mediate">中级</a></li>
+									<li><a href="displayTopics?levelname=Advanced">中高级</a></li>
+									<li><a href="displayTopics?levelname=Elite">高级</a></li>
 								</ul>
 
 							</div>
@@ -125,7 +125,7 @@ ul.testtest p {
 							<div class="test1">
 								<ul class="testtest">
 
-									<li class="title"><a href="#"><s:property value="#parameters.t1"/></a>
+									<li class="title"><a href="getListenMaterial?title="><s:property value="#parameters.t1"/></a>
 										<div class="fr ml10 menu_detail">
 											<p class="intro">
 												<s:property value="#parameters.i1"/></p>
