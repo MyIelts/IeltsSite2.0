@@ -76,9 +76,9 @@ body {
 </style>
 <style>
 .test1 {
-	border: 1px solid #ccc;
+	border: 1px solid #ccc !important;
 	padding: 14px;
-	border-radius: 15px;
+	border-radius: 15px !important;
 }
 </style>
 <style>
