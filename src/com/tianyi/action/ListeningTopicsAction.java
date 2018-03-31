@@ -1,5 +1,7 @@
 package com.tianyi.action;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -106,19 +108,21 @@ public class ListeningTopicsAction extends ActionSupport {
 		this.topiclist = topiclist;
 	}
 
-	public String execute() {
+	public String execute() throws UnsupportedEncodingException {
 		topiclist=TRepository.getTopicList(levelname);
 		
-		intro1=topiclist.get(0);
+		//intro1=topiclist.get(0);
+		intro1=URLEncoder.encode(topiclist.get(0),"utf-8");
 		title1=topiclist.get(1);
-		intro2=topiclist.get(2);
+		intro2=URLEncoder.encode(topiclist.get(2),"utf-8");
 		title2=topiclist.get(3);
-		intro3=topiclist.get(4);
+		intro3=URLEncoder.encode(topiclist.get(4),"utf-8");
 		title3=topiclist.get(5);
-		intro4=topiclist.get(6);
+		intro4=URLEncoder.encode(topiclist.get(6),"utf-8");
 		title4=topiclist.get(7);
 		
-		 
+	
+		
 		/*
 		 * topiclist=TRepository.getTopicList(levelname);
 		 * titleone=topiclist.get(1); introone=topiclist.get(2);

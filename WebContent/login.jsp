@@ -79,7 +79,7 @@ input[type="text"],input[type="password"] {
 	<div class="container">
 		<div class="jumbotron">
 			<div>
-				<h1>欢迎登陆雅思自主学习平台！</h1>
+				<h1>欢迎登陆英语自主学习平台！</h1>
 				<p>请登录体验更多功能!</p>
 			</div>
 		</div>

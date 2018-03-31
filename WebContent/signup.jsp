@@ -30,8 +30,27 @@
 	margin: 16px;
 }
 
-input[type="text"],input[type="password"] {
+input[type="text"], input[type="password"] {
 	height: 40px;
+}
+</style>
+
+<style type="text/css">
+.foot {
+	width: 100%;
+	height: 30px;
+	text-align: center;
+}
+
+.foot ul {
+	display: inline;
+	margin-left: -60px;
+}
+
+.foot ul li {
+	display: inline-block;
+	margin-left: 20px;
+	line-height: 30px;
 }
 </style>
 
@@ -78,7 +97,7 @@ input[type="text"],input[type="password"] {
 	<div class="container">
 		<div class="jumbotron">
 			<div>
-				<h1>欢迎来到雅思自主学习平台</h1>
+				<h1>欢迎来到英语自主学习平台</h1>
 				<p>快速注册！</p>
 			</div>
 		</div>
@@ -97,22 +116,24 @@ input[type="text"],input[type="password"] {
 							<fieldset>
 								<legend>注册信息</legend>
 
-								<s:textfield label="用户名" name="username"
-									cssClass="col-lg-11" placeholder="User Name" />
+								<s:textfield label="用户名" name="username" cssClass="col-lg-11"
+									placeholder="User Name" />
 
-								<s:password label="密码" name="password"
-									cssClass="col-lg-11" placeholder="Password" />
+								<s:password label="密码" name="password" cssClass="col-lg-11"
+									placeholder="Password" />
 
-								<s:textfield label="昵称" name="Name"
-									cssClass="col-lg-11" placeholder="First Name" />
+								<s:textfield label="昵称" name="Name" cssClass="col-lg-11"
+									placeholder="First Name" />
 
-								<s:textfield label="电话" name="phone"
-									cssClass="col-lg-11" placeholder="phone Number" />
-								
-								<s:select name="accountType" list="#{'student':'学生','teacher':'老师','admin':'管理员' }" label="账户类型" headerKey="" headerValue="请选择用户类型"
+								<s:textfield label="电话" name="phone" cssClass="col-lg-11"
+									placeholder="phone Number" />
+
+								<s:select name="accountType"
+									list="#{'student':'学生','teacher':'老师','admin':'管理员' }"
+									label="账户类型" headerKey="" headerValue="请选择用户类型"
 									cssClass="col-lg-11" placeholder="account Type" />
-									
-								
+
+
 
 								<s:textfield label="电子邮件" name="emailAddress"
 									cssClass="col-lg-11" placeholder="Email Address" />
@@ -136,14 +157,24 @@ input[type="text"],input[type="password"] {
 														<div id="doitprogress" class="progress-bar"></div>
 													</div>
 												</div>
-												<div class="modal-footer">
+												<div class="foot">
+													<ul>
+														<li><sj:submit cssClass="btn btn-default"
+																value="Close" data-dismiss="modal" /></li>
+														<li><sj:submit cssClass="btn btn-primary" value="Yes"
+																id="yesbutton" formId="myForm"
+																data-loading-text="Saving.."
+																data-complete-text="Submit Complete!" /></li>
+													</ul>
+												</div>
+												<%-- <div class="modal-footer">
 													<sj:submit cssClass="btn btn-default" value="Close"
 														data-dismiss="modal" />
 													<sj:submit cssClass="btn btn-primary" value="Yes"
 														id="yesbutton" formId="myForm"
 														data-loading-text="Saving.."
 														data-complete-text="Submit Complete!" />
-												</div>
+												</div> --%>
 											</div>
 										</div>
 									</div>

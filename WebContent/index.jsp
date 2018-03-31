@@ -8,7 +8,7 @@ body {
 	height: 100%;
 	margin: 0;
 	background: url(assets/img/background.jpg);
-	background-size: 1640px 800px;
+	background-size: 100%;
 	background-repeat: no-repeat;
 	display: compact;
 }

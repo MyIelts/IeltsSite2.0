@@ -1,6 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
+
 <head>
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
 <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
@@ -113,45 +114,105 @@ ul.testtest p {
 							</div>
 							<hr />
 
-				<%-- 			<center>
-						         <s:iterator id="li" value="#parameters.l" status="">
-
-									<s:property value="li"></s:property>
-									</br>
-                        
-								</s:iterator>
-							</center> --%>
-
-							<div class="test1">
-								<ul class="testtest">
-
-									<li class="title"><a href="getListenMaterial?title="><s:property value="#parameters.t1"/></a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												<s:property value="#parameters.i1"/></p>
-										</div></li>
-									<li class="title"><a href="#"><s:property value="#parameters.t2"/></a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-													<s:property value="#parameters.i2"/></p>
-										</div></li>
-
-									<li class="title"><a href="#"><s:property value="#parameters.t3"/></a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-													<s:property value="#parameters.i3"/></p>
-										</div></li>
-									<li class="title"><a href="#"><s:property value="#parameters.t4"/></a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												<s:property value="#parameters.i4"/></p>
-										</div></li>
-									<div style="clear: both;"></div>
-
-								</ul>
 
 
-							</div>
+							<s:if test="#parameters.i1=null">
+								<div class="test1">
+									<ul class="testtest">
+
+										<li class="title"><a href="getListenMaterial?title="><s:property
+													value="#parameters.i1" /></a>
+											<div class="fr ml10 menu_detail">
+												<p class="intro">
+													<s:property value="#parameters.t1" />
+												</p>
+											</div></li>
+										<li class="title"><a href="#"><s:property
+													value="#parameters.i2" /></a>
+											<div class="fr ml10 menu_detail">
+												<p class="intro">
+													<s:property value="#parameters.t2" />
+												</p>
+											</div></li>
+
+										<li class="title"><a href="#"><s:property
+													value="#parameters.i3" /></a>
+											<div class="fr ml10 menu_detail">
+												<p class="intro">
+													<s:property value="#parameters.t3" />
+												</p>
+											</div></li>
+										<li class="title"><a href="#"><s:property
+													value="#parameters.i4" /></a>
+											<div class="fr ml10 menu_detail">
+												<p class="intro">
+													<s:property value="#parameters.t4" />
+												</p>
+											</div></li>
+										<div style="clear: both;"></div>
+
+									</ul>
+
+
+								</div>
+							</s:if>
+							<s:else>
+								<%
+									String i1 = "";
+										String i2 = "";
+										String i3 = "";
+										String i4 = "";
+										if (request.getParameter("i1") != null) {
+											i1 = request.getParameter("i1");
+											i1 = new String(i1.getBytes("iso8859-1"), "utf-8");
+											i1 = java.net.URLDecoder.decode(i1, "utf-8");
+											i2 = request.getParameter("i2");
+											i2 = new String(i2.getBytes("iso8859-1"), "utf-8");
+											i2 = java.net.URLDecoder.decode(i2, "utf-8");
+											i3 = request.getParameter("i3");
+											i3 = new String(i3.getBytes("iso8859-1"), "utf-8");
+											i3 = java.net.URLDecoder.decode(i3, "utf-8");
+											i4 = request.getParameter("i4");
+											i4 = new String(i4.getBytes("iso8859-1"), "utf-8");
+											i4 = java.net.URLDecoder.decode(i4, "utf-8");
+										}
+								%>
+								<div class="test1">
+									<ul class="testtest">
+
+										<li class="title"><a href="getListenMaterial?title="><%=i1%></a>
+											<div class="fr ml10 menu_detail">
+												<p class="intro">
+													<s:property value="#parameters.t1" />
+												</p>
+											</div></li>
+										<li class="title"><a href="#"><%=i2%></a>
+											<div class="fr ml10 menu_detail">
+												<p class="intro">
+													<s:property value="#parameters.t2" />
+												</p>
+											</div></li>
+
+										<li class="title"><a href="#"><%=i3%></a>
+											<div class="fr ml10 menu_detail">
+												<p class="intro">
+													<s:property value="#parameters.t3" />
+												</p>
+											</div></li>
+										<li class="title"><a href="#"><%=i4%></a>
+											<div class="fr ml10 menu_detail">
+												<p class="intro">
+													<s:property value="#parameters.t4" />
+												</p>
+											</div></li>
+										<div style="clear: both;"></div>
+
+									</ul>
+
+
+								</div>
+							</s:else>
+
 						</div>
 					</div>
 				</div>
@@ -191,8 +252,6 @@ ul.testtest p {
 		<script src="jquery-1.8.3.js">
 	</script>
 	<script src="audioplayer.js">
-		
-	
 		
 	</script>
 </body>
