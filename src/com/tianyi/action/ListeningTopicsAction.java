@@ -113,13 +113,14 @@ public class ListeningTopicsAction extends ActionSupport {
 		
 		//intro1=topiclist.get(0);
 		intro1=URLEncoder.encode(topiclist.get(0),"utf-8");
-		title1=topiclist.get(1);
+		
+		title1=URLEncoder.encode(topiclist.get(1),"utf-8");
 		intro2=URLEncoder.encode(topiclist.get(2),"utf-8");
-		title2=topiclist.get(3);
+		title2=URLEncoder.encode(topiclist.get(3),"utf-8");
 		intro3=URLEncoder.encode(topiclist.get(4),"utf-8");
-		title3=topiclist.get(5);
+		title3=URLEncoder.encode(topiclist.get(5),"utf-8");
 		intro4=URLEncoder.encode(topiclist.get(6),"utf-8");
-		title4=topiclist.get(7);
+		title4=URLEncoder.encode(topiclist.get(7),"utf-8");
 		
 	
 		

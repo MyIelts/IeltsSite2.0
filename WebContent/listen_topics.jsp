@@ -162,6 +162,10 @@ ul.testtest p {
 										String i2 = "";
 										String i3 = "";
 										String i4 = "";
+										String t1="";
+										String t2="";
+										String t3="";
+										String t4="";
 										if (request.getParameter("i1") != null) {
 											i1 = request.getParameter("i1");
 											i1 = new String(i1.getBytes("iso8859-1"), "utf-8");
@@ -175,34 +179,46 @@ ul.testtest p {
 											i4 = request.getParameter("i4");
 											i4 = new String(i4.getBytes("iso8859-1"), "utf-8");
 											i4 = java.net.URLDecoder.decode(i4, "utf-8");
+											t1 = request.getParameter("t1");
+											t1 = new String(t1.getBytes("iso8859-1"), "utf-8");
+											t1 = java.net.URLDecoder.decode(t1, "utf-8");
+											t2 = request.getParameter("t2");
+											t2 = new String(t2.getBytes("iso8859-1"), "utf-8");
+											t2 = java.net.URLDecoder.decode(t2, "utf-8");
+											t3 = request.getParameter("t3");
+											t3 = new String(t3.getBytes("iso8859-1"), "utf-8");
+											t3 = java.net.URLDecoder.decode(t3, "utf-8");
+											t4 = request.getParameter("t4");
+											t4 = new String(t4.getBytes("iso8859-1"), "utf-8");
+											t4 = java.net.URLDecoder.decode(t4, "utf-8");
 										}
 								%>
 								<div class="test1">
 									<ul class="testtest">
 
-										<li class="title"><a href="getListenMaterial?title="><%=i1%></a>
+										<li class="title"><a href="getListenMaterial?title=<%=i1%>"><%=i1%></a>
 											<div class="fr ml10 menu_detail">
 												<p class="intro">
-													<s:property value="#parameters.t1" />
+													<%=t1%>
 												</p>
 											</div></li>
 										<li class="title"><a href="#"><%=i2%></a>
 											<div class="fr ml10 menu_detail">
 												<p class="intro">
-													<s:property value="#parameters.t2" />
+													<%=t2%>
 												</p>
 											</div></li>
 
 										<li class="title"><a href="#"><%=i3%></a>
 											<div class="fr ml10 menu_detail">
 												<p class="intro">
-													<s:property value="#parameters.t3" />
+													<%=t3%>
 												</p>
 											</div></li>
 										<li class="title"><a href="#"><%=i4%></a>
 											<div class="fr ml10 menu_detail">
 												<p class="intro">
-													<s:property value="#parameters.t4" />
+													<%=t4%>
 												</p>
 											</div></li>
 										<div style="clear: both;"></div>

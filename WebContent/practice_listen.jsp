@@ -107,37 +107,47 @@ body {
 						</div> -->
 
 
- 
-  
-     
-   
+
+						<%
+							String title = "";
+							String intro = "";
+							String path = "";
+							if (request.getParameter("i") != null) {
+								intro = request.getParameter("i");
+								intro = new String(intro.getBytes("iso8859-1"), "utf-8");
+								intro = java.net.URLDecoder.decode(intro, "utf-8");
+								title = request.getParameter("t");
+								title = new String(title.getBytes("iso8859-1"), "utf-8");
+								title = java.net.URLDecoder.decode(title, "utf-8");
+								path = request.getParameter("p");
+							}
+						%>
+
+
 						<s:form id="myForm" action="proessScript" theme="bootstrap"
 							validate="true" cssClass="bs-example form-horizontal"
 							method="post">
 							<fieldset>
 								<div>
-									<h3>听写题目</h3>
+									<h3><%=title%></h3>
 								</div>
 								<hr />
 								<div>
 									<h4>
-										听写内容：</br> </br> 距离2016里约奥运会开幕式还有三个月左右的时间，里约准备好了吗？
+										听写内容：</br> </br><%=intro%>
 									</h4>
 								</div>
 								<hr />
 								<audio id="audioId" src="assets/audio/test.mp3"
 									controls="controls" preload="auto">
 								</audio>
-								
-								
-								
-								<textarea cols=40 rows=10 name=usertext class="textbox"><s:property value="#parameters.t"/> </textarea>
-							<%-- 	<s:textfield label="用户名" name="username" cssClass="col-lg-12"
-									placeholder="User Name" /> --%>
 
-								<%-- <s:textfield label="文本" name="usertext" cssClass="col-lg-12"
-									placeholder="User Name" /> --%>
-                                  <s:property value="password"></s:property>
+
+
+								<textarea cols=40 rows=10 name=usertext class="textbox"><s:property
+										value="#parameters.score" /> </textarea>
+								
+								<s:property value="password"></s:property>
 								<div class="foot">
 									<ul>
 										<li><s:submit onclick="myStopFunction()"
@@ -177,7 +187,7 @@ body {
 	<script src="bootstrap/js/bootstrap.js">
 		
 	</script>
-   <%--  <script>
+	<%--  <script>
 		$(function() {
 			$.ajax({  
 			      url : "",  
