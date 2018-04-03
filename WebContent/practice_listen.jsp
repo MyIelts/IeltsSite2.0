@@ -66,8 +66,14 @@ body {
 
 			<ul class="nav navbar-nav navbar-right">
 				<li class="active"><a href="StudentEnrollmentWithStruts">主页</a></li>
-				<li><a href="signup.jsp">注册</a></li>
-				<li><a href="login.jsp">登录</a></li>
+				<s:if test="#session.user=null">
+					<li><a href="signup-input">注册</a></li>
+					<li><a href="login-input">登录</a></li>
+				</s:if>
+				<s:else>
+				    
+					<li><a href="logout-input">退出登录</a></li>
+				</s:else>
 
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">更多<b class="caret"></b></a>
@@ -120,6 +126,7 @@ body {
 								title = new String(title.getBytes("iso8859-1"), "utf-8");
 								title = java.net.URLDecoder.decode(title, "utf-8");
 								path = request.getParameter("p");
+								session.setAttribute("listenM",title);
 							}
 						%>
 
@@ -129,7 +136,8 @@ body {
 							method="post">
 							<fieldset>
 								<div>
-									<h3><%=title%></h3>
+								
+									<h3 name=mtitle><%=title%></h3>
 								</div>
 								<hr />
 								<div>
@@ -147,7 +155,7 @@ body {
 								<textarea cols=40 rows=10 name=usertext class="textbox"><s:property
 										value="#parameters.score" /> </textarea>
 								
-								<s:property value="password"></s:property>
+								
 								<div class="foot">
 									<ul>
 										<li><s:submit onclick="myStopFunction()"

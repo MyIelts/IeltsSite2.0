@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.tianyi.service.StudentService;
 
@@ -52,6 +53,8 @@ public class LogAction extends ActionSupport implements SessionAware {
 		} else {
 			session.put("user",username );
 			session.put("pw",password );
+			session.put("insertName", username);
+		
 			return SUCCESS;
 		}
 	
