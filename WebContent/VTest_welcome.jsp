@@ -81,8 +81,13 @@ body {
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="StudentEnrollmentWithStruts">主页</a></li>
-				<li><a href="signup.jsp">注册</a></li>
-				<li><a href="login.jsp">登录</a></li>
+					<s:if test="#session.user=null">
+					<li><a href="signup-input">注册</a></li>
+					<li><a href="login-input">登录</a></li>
+				</s:if>
+				<s:else>
+					<li><a href="logout-input">退出登录</a></li>
+				</s:else>
 
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">更多<b class="caret"></b></a>
@@ -120,7 +125,7 @@ body {
 									<p>本测试仅供参考。</p>
 								</div>
 								<span class="button-wrap"> <a
-									href="http://www.bootcss.com/" class="button button-pill ">开始测评&nbsp;<i
+									href="VTest.jsp" class="button button-pill ">开始测评&nbsp;<i
 										class="fa fa-arrow-right"></i></a>
 								</span>
 								

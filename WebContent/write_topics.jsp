@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ page import="java.sql.*"%>
 <html>
 <head>
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
@@ -176,19 +177,63 @@ ul.testtest p {
 									<dl>
 										<dt>Topics</dt>
 										<dd>
-											<a href="#"><i class="fa fa-graduation-cap fa-fw"></i>&nbsp;教育类</a>
-											<a href="#"><i class="fa fa-university fa-fw"></i>&nbsp;政府类</a>
-											<a href="#"><i class="fa fa-users fa-fw"></i>&nbsp;社会类</a> <a
-												href="#"><i class="fa fa-heartbeat fa-fw"></i>&nbsp;健康类</a>
-											<a href="#"><i class="fa fa-youtube-play fa-fw"></i>&nbsp;媒体类</a>
-											<a href="#"><i class="fa fa-recycle fa-fw"></i>&nbsp;环保类</a>
-											<a href="#"><i class="fa fa-plane fa-fw"></i>&nbsp;科技发明类</a>
-											<a href="#"><i class="fa fa-legal fa-fw"></i>&nbsp;犯罪法律类</a>
-											<a href="#"><i class="fa fa-language fa-fw"></i>&nbsp;文化类</a>
+											<a href="getWritingTopics?levelname=education"><i
+												class="fa fa-graduation-cap fa-fw"></i>&nbsp;教育类</a> <a href="#"><i
+												class="fa fa-university fa-fw"></i>&nbsp;政府类</a> <a href="#"><i
+												class="fa fa-users fa-fw"></i>&nbsp;社会类</a> <a href="#"><i
+												class="fa fa-heartbeat fa-fw"></i>&nbsp;健康类</a> <a href="#"><i
+												class="fa fa-youtube-play fa-fw"></i>&nbsp;媒体类</a> <a href="#"><i
+												class="fa fa-recycle fa-fw"></i>&nbsp;环保类</a> <a href="#"><i
+												class="fa fa-plane fa-fw"></i>&nbsp;科技发明类</a> <a href="#"><i
+												class="fa fa-legal fa-fw"></i>&nbsp;犯罪法律类</a> <a href="#"><i
+												class="fa fa-language fa-fw"></i>&nbsp;文化类</a>
 										</dd>
 									</dl>
 								</div>
 							</div>
+
+							<%
+								HttpSession s = request.getSession();
+								String currentCategory = (String) s.getAttribute("writingCategory");
+								System.out.println(currentCategory);
+								
+									currentCategory = "environment";
+								
+								String driverName = "com.mysql.jdbc.Driver";
+
+								String userName = "root";
+
+								String userPasswd = "";
+
+								String dbName = "ielts";
+
+								String tableName = "writingmaterials";
+								String url = "jdbc:mysql://localhost:3306/" + dbName + "?user=" + userName + "&password=" + userPasswd;
+								Class.forName("com.mysql.jdbc.Driver").newInstance();
+								Connection connection = DriverManager.getConnection(url);
+								Statement statement = connection.createStatement();
+								String sql = "SELECT * FROM " + tableName + " WHERE category='" + currentCategory + "'";
+								ResultSet rs = statement.executeQuery(sql);
+							%>
+							<%
+								while (rs.next()) {
+							%>
+							<tr>
+
+								<a href="###"> <%out.print(rs.getString(1));%>
+								</a>
+								<td>
+									<%
+										out.print(rs.getString(2));
+									%>&nbsp;&nbsp;&nbsp;&nbsp;
+								</td>
+								
+								<br>
+							</tr>
+							</tbody>
+							<%
+								}
+							%>
 
 
 							<div class="test1">
@@ -263,5 +308,15 @@ ul.testtest p {
 	<script src="audioplayer.js">
 		
 	</script>
+	<script>
+     function getTopics(s){
+    	 HttpSession s = request.getSession(); 
+    	 s.setAttribute("writingCategory", s)
+     }
+    </script>
+
+
+
+
 </body>
 </html>

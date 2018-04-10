@@ -20,6 +20,7 @@ public class ListenScriptAction extends ActionSupport  {
 	private String mtitle;
 	private ScriptService scriptservice;
 	ListenMaterialRepository LMR=new ListenMaterialRepository();
+	ScriptService SService=new ScriptService();
 	// private Map<String,Object> dataMap;
     // getters & setters
 	
@@ -52,9 +53,11 @@ public class ListenScriptAction extends ActionSupport  {
 			
 		username= (String)ActionContext.getContext().getSession().get("insertName");
 		mtitle=(String)ActionContext.getContext().getSession().get("listenM");
-		usertext="process script";
+		usertext=LMR.getScript(mtitle);
+		float score=SService.getSimilarityRatio(usertext, usertext);
+		
 		try {
-			LMR.storeListeningRecord(username, mtitle, usertext);
+			LMR.storeListeningRecord(username, mtitle, score+"");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

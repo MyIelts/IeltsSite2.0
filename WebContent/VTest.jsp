@@ -163,8 +163,13 @@ keyframes animate-positive { 0% {
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="StudentEnrollmentWithStruts">主页</a></li>
-				<li><a href="signup.jsp">注册</a></li>
-				<li><a href="login.jsp">登录</a></li>
+					<s:if test="#session.user=null">
+					<li><a href="signup-input">注册</a></li>
+					<li><a href="login-input">登录</a></li>
+				</s:if>
+				<s:else>
+					<li><a href="logout-input">退出登录</a></li>
+				</s:else>
 
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">更多<b class="caret"></b></a>
@@ -197,14 +202,18 @@ keyframes animate-positive { 0% {
 								<div class="half2">
 									<form runat="server">
 										<p>
-											&nbsp;选择单词正确的含义 <br> 
-											<input style="margin:15px 10px" id="r1" name="col" type="radio" runat="server">A:</input> <br> 
-											<input id="r2" style="margin:15px 10px"name="col" type="radio" runat="server">B:</input> <br>
-											<input style="margin:15px 10px" id="r3" name="col" type="radio" runat="server">C:</input><br> 
-											<input style="margin:15px 10px 20px 10px" id="r4" name="col" type="radio" runat="server">D:</input> <br> 
-											<span class="button-wrap"> <a href="http://www.bootcss.com/" class="button button-pill ">下一题&nbsp;<i
-										class="fa fa-arrow-right"></i></a>
-								</span>
+											&nbsp;选择单词正确的含义 <br> <input style="margin: 15px 10px"
+												id="r1" name="col" type="radio" runat="server">A:</input> <br>
+											<input id="r2" style="margin: 15px 10px" name="col"
+												type="radio" runat="server">B:</input> <br> <input
+												style="margin: 15px 10px" id="r3" name="col" type="radio"
+												runat="server">C:</input><br> <input
+												style="margin: 15px 10px 20px 10px" id="r4" name="col"
+												type="radio" runat="server">D:</input> <br> <span
+												class="button-wrap"> <a
+												href="http://www.bootcss.com/" class="button button-pill ">下一题&nbsp;<i
+													class="fa fa-arrow-right"></i></a>
+											</span>
 									</form>
 								</div>
 							</div>
@@ -250,16 +259,7 @@ keyframes animate-positive { 0% {
 			window.location.href = '目标网址';
 		}
 	</script>
-	<script>
-		$(function() {
-			$("#audioId").audioPlayer();
-		})
 
-		<script src="jquery-1.8.3.js">
-	</script>
-	<script src="audioplayer.js">
-		
-	</script>
 	<script runat="server">
 	Sub submit(Source As Object, e As EventArgs)
 		if r1.Checked=True then
@@ -273,7 +273,7 @@ keyframes animate-positive { 0% {
      	end if
    		end if
 		end if
-End Sub
+   End Sub
 </script>
 </body>
 </html>

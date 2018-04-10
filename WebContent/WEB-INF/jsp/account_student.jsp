@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page import="java.sql.*"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
@@ -39,7 +40,7 @@
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">能力测评<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">词汇量测试</a></li>
+						<li><a href="VTest_welcome.jsp">词汇量测试</a></li>
 						<li class="divider"></li>
 						<li><a href="#">听力等级测试</a></li>
 					</ul></li>
@@ -66,20 +67,20 @@
 
 				<li><a href="StudentEnrollmentWithStruts">主页</a></li>
 
-					<s:if test="#session.user=null">
-						<li><a href="signup-input">注册</a></li>
-						<li><a href="login-input">登录</a></li>
-					</s:if>
-					<s:else>
+				<s:if test="#session.user=null">
+					<li><a href="signup-input">注册</a></li>
+					<li><a href="login-input">登录</a></li>
+				</s:if>
+				<s:else>
 					<li><a href="logout-input">退出登录</a></li>
-					</s:else>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">更多<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">联系我们</a></li>
-							<li class="divider"></li>
-							<li><a href="#">更多内容</a></li>
-						</ul></li>
+				</s:else>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">更多<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">联系我们</a></li>
+						<li class="divider"></li>
+						<li><a href="#">更多内容</a></li>
+					</ul></li>
 			</ul>
 		</div>
 		<!-- /.nav-collapse -->
@@ -129,7 +130,7 @@
 								class="caret"></b> <span class="sr-only">(current)</span>
 						</a></li>
 						<ul id="productmeun" class="nav nav-list collapse menu-second">
-							<li><a href="###" onclick="showAtRight('productList.jsp')"><i
+							<li><a c onclick="showAtRight('productList.jsp')"><i
 									class="fa fa-pencil-square fa-fw"></i> 写作练习记录</a></li>
 							<li><a href="###" onclick="showAtRight('productList.jsp')"><i
 									class="fa fa-microphone fa-fw"></i> 口语练习记录</a></li>
@@ -160,10 +161,63 @@
 
 					</h1>
 			</h1>
-			<h4>
-				<strong>使用指南：</strong><br> <br> <br>默认页面内容……
-			</h4>
+			<%
+			  HttpSession s = request.getSession(); 
+			   String currentUserName=(String)s.getAttribute("insertName");
+				String driverName = "com.mysql.jdbc.Driver";
 
+				String userName = "root";
+
+				String userPasswd = "";
+
+				String dbName = "ielts";
+
+				String tableName = "listeningrecords";
+				String url = "jdbc:mysql://localhost:3306/" + dbName + "?user=" + userName + "&password=" + userPasswd;
+				Class.forName("com.mysql.jdbc.Driver").newInstance();
+				Connection connection = DriverManager.getConnection(url);
+				Statement statement = connection.createStatement();
+				String sql = "SELECT * FROM " + tableName+" WHERE UserName='"+currentUserName+"'";
+				ResultSet rs = statement.executeQuery(sql);
+			%>
+			<h4>
+				<strong>我的练习：</strong>
+			</h4>
+			 <thead>
+   <tr>
+        <th field ="1" width="50">听力练习&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th field ="2" width="50">听写正确率&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th field ="3" width="50">听写时间</th>
+        <br> 
+    </tr>
+    </thead>
+    <tbody>
+    <%
+        while (rs.next()) {
+    %>
+    <tr>
+
+        <a href="###"> 	
+            <%
+                out.print(rs.getString(3));
+            %>
+        </a>
+        <td>
+            <%
+                out.print(rs.getString(5));
+            %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            <%
+                out.print(rs.getString(4));
+            %>
+        </td>
+        <br> 
+    </tr>
+    </tbody>
+    <%
+        }
+    %>
 		</div>
 		<!-- /.main-container -->
 	</div>
