@@ -101,7 +101,8 @@
 						<ul id="usermanagement" class="nav nav-list collapse menu-second">
 							<li><a href="###" onclick="showAtRight('productList.jsp')"><i
 									class="fa fa-vcard-o (alias) fa-fw"></i>&nbsp;查看/修改用户列表</a></li>
-							<li><a href="###" onclick="showAtRight('productList.jsp')"><i
+							<li><a href="###"
+								onclick="showAtRight('Users_waitforapproved.jsp')"><i
 									class="fa fa-user-plus fa-fw"></i>&nbsp;待审核的用户</a></li>
 						</ul>
 
@@ -158,7 +159,7 @@
 		</div>
 		<!-- /.main-container -->
 	</div>
-	</div>
+	
 
 
 	<script type="text/javascript">

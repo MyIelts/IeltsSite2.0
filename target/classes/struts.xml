@@ -4,25 +4,31 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="main" extends="struts-default">
-        <action name="login" class="com.tianyi.action.LogAction">
-            <result name="success">WEB-INF/jsp/account_student.jsp</result>
-            <result name="error">WEB-INF/jsp/login-failure.jsp</result>
-        </action>
-        <action name="signup" class="com.tianyi.action.SignUpAction">
-            <result name="success">WEB-INF/jsp/account_student.jsp</result>
-            <result name="error">WEB-INF/jsp/signup-failure.jsp</result>
-        </action>
-          <action name="proessScript" class="com.tianyi.action.ListenScriptAction">
-           <result type="redirect">practice_listen.jsp?score=${usertext}</result>
-        </action>  
-         <action name="displayTopics" class="com.tianyi.action.ListeningTopicsAction">
-           <result type="redirect">listen_topics.jsp?i1=${intro1}&amp;t1=${title1}&amp;i2=${intro2}&amp;t2=${title2}&amp;i3=${intro3}&amp;t3=${title3}&amp;i4=${intro4}&amp;t4=${title4}</result>
-        
-        </action> 
-         <action name="getListenMaterial" class="com.tianyi.action.getListenQuestionAction">
-          <result type="redirect">practice_listen.jsp?i=${intro}&amp;t=${title}&amp;p=${path}</result>
-          </action>
-    </package>
+	<package name="main" extends="struts-default">
+		<action name="login" class="com.tianyi.action.LogAction">
+			<result name="success">WEB-INF/jsp/account_student.jsp</result>
+			<result name="error">WEB-INF/jsp/login-failure.jsp</result>
+		</action>
+		<action name="signup" class="com.tianyi.action.SignUpAction">
+			<result name="success">WEB-INF/jsp/account_student.jsp</result>
+			<result name="error">WEB-INF/jsp/signup-failure.jsp</result>
+		</action>
+		<action name="proessScript" class="com.tianyi.action.ListenScriptAction">
+			<result type="redirect">practice_listen.jsp?score=${usertext}</result>
+		</action>
+		<action name="displayTopics" class="com.tianyi.action.ListeningTopicsAction">
+			<result type="redirect">listen_topics.jsp?i1=${intro1}&amp;t1=${title1}&amp;i2=${intro2}&amp;t2=${title2}&amp;i3=${intro3}&amp;t3=${title3}&amp;i4=${intro4}&amp;t4=${title4}
+			</result>
+
+		</action>
+		<action name="getWritingTopics" class="com.tianyi.action.getWritingTopicsAction">
+			<result type="redirect">write_topics.jsp?i1=${intro1}</result>
+
+		</action>
+		<action name="getListenMaterial" class="com.tianyi.action.getListenQuestionAction">
+			<result type="redirect">practice_listen.jsp?i=${intro}&amp;t=${title}&amp;p=${path}
+			</result>
+		</action>
+	</package>
 
 </struts>

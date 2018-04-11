@@ -99,7 +99,7 @@
 								class="fa fa-language fa-fw fa-2x"></i>&nbsp;写作任务列表</a></li>
 
 						<li><a href="###"
-							onclick="showAtRight('personalinformation.jsp')"><i
+							onclick="showAtRight('Tasklist_speaking.jsp')"><i
 								class="fa fa-commenting-o fa-fw fa-2x"></i>&nbsp;口语任务列表</a></li>
 
 						<li><a href="###"

@@ -178,14 +178,15 @@ ul.testtest p {
 										<dt>Topics</dt>
 										<dd>
 											<a href="getWritingTopics?levelname=education"><i
-												class="fa fa-graduation-cap fa-fw"></i>&nbsp;教育类</a> <a href="#"><i
-												class="fa fa-university fa-fw"></i>&nbsp;政府类</a> <a href="#"><i
-												class="fa fa-users fa-fw"></i>&nbsp;社会类</a> <a href="#"><i
-												class="fa fa-heartbeat fa-fw"></i>&nbsp;健康类</a> <a href="#"><i
-												class="fa fa-youtube-play fa-fw"></i>&nbsp;媒体类</a> <a href="#"><i
-												class="fa fa-recycle fa-fw"></i>&nbsp;环保类</a> <a href="#"><i
-												class="fa fa-plane fa-fw"></i>&nbsp;科技发明类</a> <a href="#"><i
-												class="fa fa-legal fa-fw"></i>&nbsp;犯罪法律类</a> <a href="#"><i
+												class="fa fa-graduation-cap fa-fw"></i>&nbsp;教育类</a> <a href="getWritingTopics?levelname=government"><i
+												class="fa fa-university fa-fw"></i>&nbsp;政府类</a> <a href="getWritingTopics?levelname=society"><i
+												class="fa fa-users fa-fw"></i>&nbsp;社会类</a> <a href="getWritingTopics?levelname=health"><i
+												class="fa fa-heartbeat fa-fw"></i>&nbsp;健康类</a> <a href="getWritingTopics?levelname=media"><i
+												class="fa fa-youtube-play fa-fw"></i>&nbsp;媒体类</a> <a
+												href="getWritingTopics?levelname=environment"><i
+												class="fa fa-recycle fa-fw"></i>&nbsp;环保类</a> <a href="getWritingTopics?levelname=technology"><i
+												class="fa fa-plane fa-fw"></i>&nbsp;科技发明类</a> <a href="getWritingTopics?levelname=Law"><i
+												class="fa fa-legal fa-fw"></i>&nbsp;犯罪法律类</a> <a href="getWritingTopics?levelname=culture"><i
 												class="fa fa-language fa-fw"></i>&nbsp;文化类</a>
 										</dd>
 									</dl>
@@ -194,11 +195,8 @@ ul.testtest p {
 
 							<%
 								HttpSession s = request.getSession();
-								String currentCategory = (String) s.getAttribute("writingCategory");
-								System.out.println(currentCategory);
-								
-									currentCategory = "environment";
-								
+								String currentCategory = (String) s.getAttribute("writingCatagory");
+
 								String driverName = "com.mysql.jdbc.Driver";
 
 								String userName = "root";
@@ -215,51 +213,30 @@ ul.testtest p {
 								String sql = "SELECT * FROM " + tableName + " WHERE category='" + currentCategory + "'";
 								ResultSet rs = statement.executeQuery(sql);
 							%>
-							<%
-								while (rs.next()) {
-							%>
-							<tr>
-
-								<a href="###"> <%out.print(rs.getString(1));%>
-								</a>
-								<td>
-									<%
-										out.print(rs.getString(2));
-									%>&nbsp;&nbsp;&nbsp;&nbsp;
-								</td>
-								
-								<br>
-							</tr>
-							</tbody>
-							<%
-								}
-							%>
+							
 
 
 							<div class="test1">
 								<ul class="testtest">
-
-									<li class="title"><a href="#">BBC新闻</a>
+									<%
+										while (rs.next()) {
+									%>
+									<li class="title"><a href="#">
+											<%
+												out.print(rs.getString(1));
+											%>
+									</a>
 										<div class="fr ml10 menu_detail">
 											<p class="intro">
-												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
+												<%
+													out.print(rs.getString(2));
+												%>
+											</p>
 										</div></li>
-									<li class="title"><a href="#">BBC新闻</a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
-										</div></li>
-
-									<li class="title"><a href="#">BBC新闻</a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
-										</div></li>
-									<li class="title"><a href="#">BBC新闻</a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
-										</div></li>
+									
+									<%
+										}
+									%>
 									<div style="clear: both;"></div>
 								</ul>
 							</div>
