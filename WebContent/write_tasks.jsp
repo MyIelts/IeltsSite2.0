@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ page import="java.sql.*"%>
 <html>
 <head>
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
@@ -176,12 +177,18 @@ ul.testtest p {
 									<dl>
 										<dt>Task One</dt>
 										<dd>
-											<a href="#"><i class="fa fa-area-chart fa-fw"></i>&nbsp;数据图表</a>
-											<a href="#"><i class="fa fa-pie-chart fa-fw"></i>&nbsp;饼图</a>
-											<a href="#"><i class="fa fa-bar-chart fa-fw"></i>&nbsp;直方图/柱形图</a>
-											<a href="#"><i class="fa fa-line-chart fa-fw"></i>&nbsp;曲线图</a>
-											<a href="#"><i class="fa fa-table fa-fw"></i>&nbsp;表格图</a> <a
-												href="#"><i class="fa fa-refresh fa-fw"></i>&nbsp;流程图</a>
+											<a href="getWritingTopics?levelname=datachart"><i
+												class="fa fa-area-chart fa-fw"></i>&nbsp;数据图表</a> <a
+												href="getWritingTopics?levelname=piechart"><i
+												class="fa fa-pie-chart fa-fw"></i>&nbsp;饼图</a> <a
+												href="getWritingTopics?levelname=barchart"><i
+												class="fa fa-bar-chart fa-fw"></i>&nbsp;直方图/柱形图</a> <a
+												href="getWritingTopics?levelname=curvechart"><i
+												class="fa fa-line-chart fa-fw"></i>&nbsp;曲线图</a> <a
+												href="getWritingTopics?levelname=tablechart"><i
+												class="fa fa-table fa-fw"></i>&nbsp;表格图</a> <a
+												href="getWritingTopics?levelname=flowchart"><i
+												class="fa fa-refresh fa-fw"></i>&nbsp;流程图</a>
 										</dd>
 									</dl>
 									<dl>
@@ -193,32 +200,50 @@ ul.testtest p {
 									</dl>
 								</div>
 							</div>
+							<%
+								HttpSession s = request.getSession();
+								String currentCategory = (String) s.getAttribute("writingCatagory");
 
+								String driverName = "com.mysql.jdbc.Driver";
+
+								String userName = "root";
+
+								String userPasswd = "";
+
+								String dbName = "ielts";
+
+								String tableName = "writingmaterials";
+								String url = "jdbc:mysql://localhost:3306/" + dbName + "?user="
+										+ userName + "&password=" + userPasswd;
+								Class.forName("com.mysql.jdbc.Driver").newInstance();
+								Connection connection = DriverManager.getConnection(url);
+								Statement statement = connection.createStatement();
+								String sql = "SELECT * FROM " + tableName + " WHERE category='"
+										+ currentCategory + "'";
+								ResultSet rs = statement.executeQuery(sql);
+							%>
 
 							<div class="test1">
 								<ul class="testtest">
+									<%
+										while (rs.next()) {
+									%>
+									<li class="title"><a href="#">
+											<%
+												out.print(rs.getString(1));
+											%>
+									</a>
+										<div class="fr ml10 menu_detail">
+											<p class="intro">
+												<%
+													out.print(rs.getString(2));
+												%>
+											</p>
+										</div></li>
 
-									<li class="title"><a href="#">BBC新闻</a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
-										</div></li>
-									<li class="title"><a href="#">BBC新闻</a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
-										</div></li>
-
-									<li class="title"><a href="#">BBC新闻</a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
-										</div></li>
-									<li class="title"><a href="#">BBC新闻</a>
-										<div class="fr ml10 menu_detail">
-											<p class="intro">
-												我是谁？世界从何而来？每个曾对生命怀抱好奇的心灵，都应该翻开《苏菲的世界》。挪威作家乔斯坦·贾德所著哲学史小说《苏菲的世界》将会唤醒每个人内心深处对生命的赞叹与对人生终极意义的关怀和好奇。</p>
-										</div></li>
+									<%
+										}
+									%>
 									<div style="clear: both;"></div>
 								</ul>
 							</div>
