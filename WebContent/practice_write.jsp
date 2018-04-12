@@ -65,11 +65,11 @@ body {
 			document.getElementById("mytime").innerText = two_char(h) + ":"
 					+ two_char(m) + ":" + two_char(s);
 		}, 1000);
-	
+
 	}
-	function stopTimer(){
-        clearTimeout(mytime);
-    }
+	function stopTimer() {
+		clearTimeout(mytime);
+	}
 </script>
 </head>
 <body onload="time_fun()">
@@ -108,48 +108,37 @@ body {
 		<div class="well">
 			<div class="container">
 				<div class="row">
+
 					<div class="col-lg-9">
-
-						<!-- <div>
-							<h3>听写题目</h3>
-						</div>
-						<hr />
-						<div>
-							<h4>
-								听写内容：</br> </br> 距离2016里约奥运会开幕式还有三个月左右的时间，里约准备好了吗？
-							</h4>
-						</div>
-						<hr />
-						<audio id="audioId" src="assets/audio/test.mp3"
-							controls="controls" preload="auto">
-						</audio>
-						<textarea cols=40 rows=10 name=listenText class="textbox"></textarea>
-
-						<div class="col-lg-offset-7" text-align:center>
-
-							<button type="button">提交</button>
-						</div> -->
-
-
-
-
-
-
+						<ol class="breadcrumb">
+							<li><a href="#">主页</a></li>
+							<li><a href="#">写作练习</a></li>
+							<li class="active">曲线图</li>
+						</ol>
 						<s:form id="myForm" action="proessScript" theme="bootstrap"
 							validate="true" cssClass="bs-example form-horizontal"
 							method="post">
 							<fieldset>
 								<div>
-									<h3>写作练习</h3>
+									<h3>写作练习题目</h3>
 								</div>
 								<hr />
+								<%-- <s:if test="#session.user=null"> --%>
+								<div style="text-align: center;">
+									<img src="assets/img/linegraph.jpg" alt="LineGraph" width="600"
+										height="400">
+								</div>
+								</br>
+								<%-- </s:if>
+								<s:else>
+									<li><a href="logout-input">退出登录</a></li>
+								</s:else> --%>
 								<div>
-									<p style="font-size: 18px; line-height: 24px">
-										写作题目：</br> </br> Consumers are faced with increasing numbers of
-										advertisements from competing companies. To what extent do you
-										think are consumers influenced by advertisements? What
-										measures can be taken to protect them?
-									</p>
+									<p style="font-size: 18px; line-height: 24px">Consumers are
+										faced with increasing numbers of advertisements from competing
+										companies. To what extent do you think are consumers
+										influenced by advertisements? What measures can be taken to
+										protect them?</p>
 								</div>
 								<hr />
 								<h2 id="mytime">00:00:00</h2>
