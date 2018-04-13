@@ -203,6 +203,7 @@ ul.testtest p {
 								String currentCategory = (String) s.getAttribute("writingCatagory");
 								String setEmpty="";
                                 s.setAttribute("writingCatagory",setEmpty ); 
+                                String tempQuestion="";
 								String driverName = "com.mysql.jdbc.Driver";
 
 								String userName = "root";
@@ -226,8 +227,9 @@ ul.testtest p {
 								<ul class="testtest">
 									<%
 										while (rs.next()) {
+											tempQuestion=rs.getString(2);
 									%>
-									<li class="title"><a href="#">
+									<li class="title"><a href="getWritingQuestions?writequestionname=<%=tempQuestion%>">
 											<%
 												out.print(rs.getString(1));
 											%>

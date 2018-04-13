@@ -12,7 +12,7 @@ import com.tianyi.repository.ListenMaterialRepository;
 import com.tianyi.service.ScriptService;
 import com.tianyi.service.StudentService;
 
-public class ListenScriptAction extends ActionSupport  {
+public class GenerateWritingOrderAction extends ActionSupport  {
 
 	private static final long serialVersionUID = 1L;
 	private String username;// ук╨е
@@ -52,16 +52,10 @@ public class ListenScriptAction extends ActionSupport  {
 	public String execute() {
 			
 		username= (String)ActionContext.getContext().getSession().get("insertName");
-		mtitle=(String)ActionContext.getContext().getSession().get("listenM");
-		String actualscript=LMR.getScript(mtitle);
-		float score=SService.getSimilarityRatio(usertext, actualscript);
+		mtitle=(String)ActionContext.getContext().getSession().get("writingQuestion");
+	
 		
-		try {
-			LMR.storeListeningRecord(username, mtitle, score+"");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		 
 			return SUCCESS;
 		

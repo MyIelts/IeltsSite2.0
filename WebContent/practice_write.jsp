@@ -148,7 +148,7 @@ body {
 						</ol>
 						
 						
-						<s:form id="myForm" action="proessScript" theme="bootstrap"
+						<s:form id="myForm" action="proesswritingorder" theme="bootstrap"
 							validate="true" cssClass="bs-example form-horizontal"
 							method="post">
 							<fieldset>
