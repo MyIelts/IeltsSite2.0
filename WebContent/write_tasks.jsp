@@ -148,8 +148,13 @@ ul.testtest p {
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="StudentEnrollmentWithStruts">主页</a></li>
-				<li><a href="signup.jsp">注册</a></li>
-				<li><a href="login.jsp">登录</a></li>
+				<s:if test="#session.user=null">
+					<li><a href="signup-input">注册</a></li>
+					<li><a href="login-input">登录</a></li>
+				</s:if>
+				<s:else>
+					<li><a href="logout-input">退出登录</a></li>
+				</s:else>
 
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">更多<b class="caret"></b></a>
@@ -177,25 +182,25 @@ ul.testtest p {
 									<dl>
 										<dt>Task One</dt>
 										<dd>
-											<a href="getWritingTopics?levelname=datachart"><i
+											<a href="getWritingTasks?levelname=datachart"><i
 												class="fa fa-area-chart fa-fw"></i>&nbsp;数据图表</a> <a
-												href="getWritingTopics?levelname=piechart"><i
+												href="getWritingTasks?levelname=piechart"><i
 												class="fa fa-pie-chart fa-fw"></i>&nbsp;饼图</a> <a
-												href="getWritingTopics?levelname=barchart"><i
+												href="getWritingTasks?levelname=barchart"><i
 												class="fa fa-bar-chart fa-fw"></i>&nbsp;直方图/柱形图</a> <a
-												href="getWritingTopics?levelname=curvechart"><i
+												href="getWritingTasks?levelname=curvechart"><i
 												class="fa fa-line-chart fa-fw"></i>&nbsp;曲线图</a> <a
-												href="getWritingTopics?levelname=tablechart"><i
+												href="getWritingTasks?levelname=tablechart"><i
 												class="fa fa-table fa-fw"></i>&nbsp;表格图</a> <a
-												href="getWritingTopics?levelname=flowchart"><i
+												href="getWritingTasks?levelname=flowchart"><i
 												class="fa fa-refresh fa-fw"></i>&nbsp;流程图</a>
 										</dd>
 									</dl>
 									<dl>
 										<dt>Task Two</dt>
 										<dd>
-											<a href="#"><i class="fa fa-comments fa-fw"></i>&nbsp;Discussion</a>
-											<a href="#"><i class="fa fa-question-circle fa-fw"></i>&nbsp;Argumentation</a>
+											<a href="write_topics.jsp"><i class="fa fa-comments fa-fw"></i>&nbsp;Discussion&Argumentation</a>
+											
 										</dd>
 									</dl>
 								</div>
@@ -203,7 +208,9 @@ ul.testtest p {
 							<%
 								HttpSession s = request.getSession();
 								String currentCategory = (String) s.getAttribute("writingCatagory");
-
+								String setEmpty="";
+                                s.setAttribute("writingCatagory",setEmpty ); 
+                                String tempQuestion="";
 								String driverName = "com.mysql.jdbc.Driver";
 
 								String userName = "root";
@@ -227,8 +234,9 @@ ul.testtest p {
 								<ul class="testtest">
 									<%
 										while (rs.next()) {
+											 tempQuestion=rs.getString(2);
 									%>
-									<li class="title"><a href="#">
+									<li class="title"><a href="getWritingQuestions?writequestionname=<%=tempQuestion%>">
 											<%
 												out.print(rs.getString(1));
 											%>

@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ page import="java.sql.*"%>
 <html>
 <head>
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
@@ -110,11 +111,43 @@ body {
 				<div class="row">
 
 					<div class="col-lg-9">
+					<%
+								HttpSession s = request.getSession();
+								String currentCategory = (String) s.getAttribute("writingCatagory");
+								String currentQuestion=(String) s.getAttribute("writingQuestion");
+								String setEmpty="";
+								String imagePath="";
+                                s.setAttribute("writingCatagory",setEmpty ); 
+                                String tempQuestion="";
+								String driverName = "com.mysql.jdbc.Driver";
+
+								String userName = "root";
+
+								String userPasswd = "";
+
+								String dbName = "ielts";
+
+								String tableName = "writingmaterials";
+								String url = "jdbc:mysql://localhost:3306/" + dbName + "?user="
+										+ userName + "&password=" + userPasswd;
+								Class.forName("com.mysql.jdbc.Driver").newInstance();
+								Connection connection = DriverManager.getConnection(url);
+								Statement statement = connection.createStatement();
+								String sql = "SELECT * FROM " + tableName + " WHERE Title='"
+										+ currentQuestion + "'";
+								ResultSet rs = statement.executeQuery(sql);
+								while (rs.next()) {
+									currentCategory=rs.getString(1);
+									imagePath=rs.getString(6);
+								}
+							%>
 						<ol class="breadcrumb">
 							<li><a href="#">主页</a></li>
 							<li><a href="#">写作练习</a></li>
-							<li class="active">曲线图</li>
+							<li class="active"><%=currentCategory%></li>
 						</ol>
+						
+						
 						<s:form id="myForm" action="proessScript" theme="bootstrap"
 							validate="true" cssClass="bs-example form-horizontal"
 							method="post">
@@ -125,8 +158,10 @@ body {
 								<hr />
 								<%-- <s:if test="#session.user=null"> --%>
 								<div style="text-align: center;">
-									<img src="assets/img/linegraph.jpg" alt="LineGraph" width="600"
+								<%if(!imagePath.equals("NA")){ %>
+									<img src="<%=imagePath%>" alt="LineGraph" width="600"
 										height="400">
+										<%} %>
 								</div>
 								</br>
 								<%-- </s:if>
@@ -134,11 +169,7 @@ body {
 									<li><a href="logout-input">退出登录</a></li>
 								</s:else> --%>
 								<div>
-									<p style="font-size: 18px; line-height: 24px">Consumers are
-										faced with increasing numbers of advertisements from competing
-										companies. To what extent do you think are consumers
-										influenced by advertisements? What measures can be taken to
-										protect them?</p>
+									<p style="font-size: 18px; line-height: 24px"><%=currentQuestion%></p>
 								</div>
 								<hr />
 								<h2 id="mytime">00:00:00</h2>

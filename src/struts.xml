@@ -25,6 +25,16 @@
 			<result type="redirect">write_topics.jsp?i1=${intro1}</result>
 
 		</action>
+		
+		<action name="getWritingQuestions" class="com.tianyi.action.getWritingQuestionAction">
+			<result type="redirect">practice_write.jsp?i1=${intro1}</result>
+
+		</action>
+		<action name="getWritingTasks" class="com.tianyi.action.getWritingTopicsAction">
+			<result type="redirect">write_tasks.jsp?i1=${intro1}</result>
+
+		</action>
+		
 		<action name="getListenMaterial" class="com.tianyi.action.getListenQuestionAction">
 			<result type="redirect">practice_listen.jsp?i=${intro}&amp;t=${title}&amp;p=${path}
 			</result>
