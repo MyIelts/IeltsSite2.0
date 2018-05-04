@@ -11,7 +11,7 @@ import com.tianyi.util.DbUtil;
 
 public class StudentRepository {
 	private Connection dbConnection;
-
+	 public String RepoUsertype="";
 	public StudentRepository() {
 		dbConnection = DbUtil.getConnection();
 	}
@@ -65,6 +65,7 @@ public class StudentRepository {
 	}
 
 	public boolean findByLogin(String userName, String password) {
+		boolean userExist=false;
 		if (dbConnection != null) {
 			try {
 				PreparedStatement prepStatement = dbConnection
@@ -76,15 +77,28 @@ public class StudentRepository {
 				if (result != null) {
 					while (result.next()) {
 						if (result.getString(1).equals(password)) {
-							return true;
+							userExist= true;
 						}
 					}
 				}
+				
+				
+				 prepStatement = dbConnection
+						.prepareStatement("select UserType from accounts where userName = ?");
+				prepStatement.setString(1, userName);
+
+				 result = prepStatement.executeQuery();
+					if (result != null) {
+						while (result.next()) {
+							RepoUsertype=result.getString(1);
+						}
+					}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		return false;
+		return userExist;
 	}
+
 
 }

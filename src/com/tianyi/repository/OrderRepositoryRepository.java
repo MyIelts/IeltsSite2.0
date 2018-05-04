@@ -10,12 +10,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import com.tianyi.util.DbUtil;
 
 public class OrderRepositoryRepository {
 	private Connection dbConnection;
-
+    public String orderNumber;
 	public OrderRepositoryRepository() {
 		dbConnection = DbUtil.getConnection();
 	}
@@ -48,8 +49,33 @@ public class OrderRepositoryRepository {
 	}
 
 
-   
-	public void storeListeningRecord(String username, String essay,String question) throws SQLException {
+	public boolean updateOrderRecord(String OrderNumber) throws SQLException {
+		boolean result=false;
+		if (dbConnection != null) {
+			Statement st = null;
+			st = dbConnection.createStatement();
+
+			try {
+				
+				String sql2 = "UPDATE payment SET OrderStatus = 'OrderPaid' WHERE OrderId = '"+OrderNumber+"' ";
+				int result2 = st.executeUpdate(sql2);
+	
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		
+		}
+		
+		return result;
+		
+		
+		
+		
+	}
+	public String storeWritingRecord(String username, String essay,String question) throws SQLException {
+		
 		 String price="";
 			String category = "";
 		if (dbConnection != null) {
@@ -59,12 +85,12 @@ public class OrderRepositoryRepository {
 			PreparedStatement prepStatement;
 			try {
 				prepStatement = dbConnection
-						.prepareStatement("select * from writingmaterial where  MaterialTitle ='" + question + "'");
+						.prepareStatement("select * from writingmaterials where  title ='" + question + "'");
 				ResultSet result = prepStatement.executeQuery();
 				if (result != null) {
 					while (result.next()) {
 
-						category = result.getString(4);
+						category = result.getString(5);
 
 					}
 				}
@@ -82,15 +108,23 @@ public class OrderRepositoryRepository {
 	          }
 				 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		         String currentTime=df.format(new Date());
+		         String orderNo= System.currentTimeMillis()+"";   
+		         String writingRecordID="Writing"+System.currentTimeMillis();
+		         this.orderNumber=orderNo;
 				try {
-					String sql = "insert into order (UserName,question,listeningtime,ListeningAccuration,status) values ('"
-							+ username + "','" + question + "','"+currentTime+"','" + essay + "')";
+					
+					String sql2 = "insert into writingrecords (RecordId,UserName,WritingTitle,WritingContents,WritingTime,WritingScore,status) values ('"+writingRecordID+"','"
+							+ username + "','" + question + "','"+essay+"','NA','NA','Unassigned')";
+					int result2 = st.executeUpdate(sql2);
+					
+					
+					String sql = "insert into payment (OrderId,UserName ,PaymentTime,PaymentMethod,PaymentAmount,OrderStatus,TaskId) values ('"+orderNo+"','"
+							+ username + "','" + currentTime + "','','"+price+"','NotPaid','"+writingRecordID+"')";
 					int result = st.executeUpdate(sql);
-
+					
+			
 					//insert into records
-					String sql2 = "insert into writingrecord (UserName,question,listeningtime,ListeningAccuration,status) values ('"
-							+ username + "','" + question + "','"+currentTime+"','" + essay + "')";
-					int result2 = st.executeUpdate(sql);
+					
 					
 					
 					
@@ -102,7 +136,8 @@ public class OrderRepositoryRepository {
 		}
          
 
-		
+		return price;
 	}
+
 
 }

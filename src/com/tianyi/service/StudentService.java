@@ -3,7 +3,7 @@ package com.tianyi.service;
 import com.tianyi.repository.StudentRepository;
 
 public class StudentService {
-
+    public String usertype="";
 	private StudentRepository studentRepository;
 
 	public StudentService() {
@@ -30,6 +30,7 @@ public class StudentService {
 		if (studentRepository != null) {
 			boolean status = studentRepository.findByLogin(userName, password);
 			if (status) {
+				usertype=studentRepository.RepoUsertype;
 				result = "LoginSuccess";
 			}
 		}

@@ -19,7 +19,7 @@
 			<div class="box-inner">
 				<div>
 					<h3>
-						<i class="fa fa-language fa-fw"></i>写作任务列表
+						<i class="fa fa-language fa-fw"></i>写作练习记录
 					</h3>
 					<br>
 
@@ -30,7 +30,7 @@
 						<thead>
 							<tr>
 								<th>任务Id</th>
-								<th>学生用户名</th>
+								<th>写作练习题目</th>
 								<th>提交日期</th>
 								<th>任务状态</th>
 								<th>操作</th>
@@ -45,6 +45,8 @@
 									class="label-success label label-default">完成</span></td>
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
+								</a><a class="btn btn-danger" href="#"> <i
+										class="fa fa-download fa-fw"></i> 下载
 								</a> </td>
 							</tr>
 							<tr>
@@ -55,7 +57,9 @@
 									class="label-success label label-default">完成</span></td>
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
-								</a> </td>
+								</a> <a class="btn btn-danger" href="#"> <i
+										class="fa fa-download fa-fw"></i> 下载
+								</a></td>
 							</tr>
 							<tr>
 								<td>123456</td>
@@ -65,6 +69,8 @@
 									class="label-success label label-default">完成</span></td>
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
+								</a><a class="btn btn-danger" href="#"> <i
+										class="fa fa-download fa-fw"></i> 下载
 								</a> </td>
 							</tr>
 							<tr>
@@ -75,6 +81,8 @@
 									class="label-success label label-default">完成</span></td>
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
+								</a><a class="btn btn-danger" href="#"> <i
+										class="fa fa-download fa-fw"></i> 下载
 								</a> </td>
 							</tr>
 							<tr>
@@ -86,10 +94,8 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-download fa-fw"></i> 下载批改
-								</a> <a class="btn btn-info" href="#">
-										<i class="fa fa-upload fa-fw"></i> 上传
-								</a></td>
+										class="fa fa-download fa-fw"></i> 下载
+								</a> </td>
 							</tr>
 							<tr>
 								<td>123456</td>
@@ -100,10 +106,8 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-download fa-fw"></i> 下载批改
-								</a> <a class="btn btn-info" href="#">
-										<i class="fa fa-upload fa-fw"></i> 上传
-								</a></td>
+										class="fa fa-download fa-fw"></i> 下载
+								</a> </td>
 							</tr>
 							<tr>
 								<td>123456</td>
@@ -113,8 +117,8 @@
 									class="label-warning label label-default">批改中</span></td>
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-info" href="#">
-										<i class="fa fa-upload fa-fw"></i> 上传
+								</a> <a class="btn btn-danger" href="#"> <i
+										class="fa fa-download fa-fw"></i> 下载
 								</a></td>
 							</tr>
 							<tr>
@@ -126,7 +130,7 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
+										class="fa fa-download fa-fw"></i> 下载
 								</a></td>
 							</tr>
 							<tr>
@@ -138,7 +142,7 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
+										class="fa fa-download fa-fw"></i> 下载
 								</a></td>
 							</tr>
 							<tr>
@@ -150,7 +154,7 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
+										class="fa fa-download fa-fw"></i> 下载
 								</a></td>
 							</tr>
 							<tr>
@@ -162,10 +166,8 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-download fa-fw"></i> 下载批改
-								</a> <a class="btn btn-info" href="#">
-										<i class="fa fa-upload fa-fw"></i> 上传
-								</a></td>
+										class="fa fa-download fa-fw"></i> 下载
+								</a> </td>
 							</tr>
 							<tr>
 								<td>123456</td>
@@ -176,10 +178,8 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-download fa-fw"></i> 下载批改
-								</a> <a class="btn btn-info" href="#">
-										<i class="fa fa-upload fa-fw"></i> 上传
-								</a></td>
+										class="fa fa-download fa-fw"></i> 下载
+								</a> </td>
 							</tr>
 							<tr>
 								<td>123456</td>
@@ -190,10 +190,8 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-download fa-fw"></i> 下载批改
-								</a> <a class="btn btn-info" href="#">
-										<i class="fa fa-upload fa-fw"></i> 上传
-								</a></td>
+										class="fa fa-download fa-fw"></i> 下载
+								</a> </td>
 							</tr>
 							<tr>
 								<td>123456</td>
@@ -204,10 +202,8 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-download fa-fw"></i> 下载批改
-								</a> <a class="btn btn-info" href="#">
-										<i class="fa fa-upload fa-fw"></i> 上传
-								</a></td>
+										class="fa fa-download fa-fw"></i> 下载
+								</a> </td>
 							</tr>
 							<tr>
 								<td>123456</td>
@@ -218,7 +214,7 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
+										class="fa fa-download fa-fw"></i> 下载
 								</a></td>
 							</tr>
 							<tr>
@@ -230,7 +226,7 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
+										class="fa fa-download fa-fw"></i> 下载
 								</a></td>
 							</tr>
 							<tr>
@@ -242,7 +238,7 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
+										class="fa fa-download fa-fw"></i> 下载
 								</a></td>
 							</tr>
 							<tr>
@@ -254,177 +250,10 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
+										class="fa fa-download fa-fw"></i> 下载
 								</a></td>
 							</tr>
-							<tr>
-								<td>123456</td>
-								<td>Abdullah</td>
-								<td class="center">2012/02/01</td>
-								<td class="center"><span class="label-default label">未批改</span>
-								</td>
-								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
-								</a></td>
-							</tr>
-							<tr>
-								<td>123456</td>
-								<td>Dow John</td>
-								<td class="center">2012/02/01</td>
-								<td class="center"><span class="label-default label">未批改</span>
-								</td>
-								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
-								</a></td>
-							</tr>
-							<tr>
-								<td>123456</td>
-								<td>John R</td>
-								<td class="center">2012/02/01</td>
-								<td class="center"><span class="label-default label">未批改</span>
-								</td>
-								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
-								</a></td>
-							</tr>
-							<tr>
-								<td>123456</td>
-								<td>Paul Wilson</td>
-								<td class="center">2012/03/01</td>
-								<td class="center"><span
-									class="label-warning label label-default">批改中</span></td>
-								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
-								</a></td>
-							</tr>
-							<tr>
-								<td>123456</td>
-								<td>Wilson Paul</td>
-								<td class="center">2012/03/01</td>
-								<td class="center"><span
-									class="label-warning label label-default">批改中</span></td>
-								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
-								</a></td>
-							</tr>
-							<tr>
-								<td>123456</td>
-								<td>Heera Sheikh</td>
-								<td class="center">2012/01/21</td>
-								<td class="center"><span
-									class="label-success label label-default">完成</span></td>
-								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
-								</a></td>
-							</tr>
-							<tr>
-								<td>123456</td>
-								<td>Sheikh Heera</td>
-								<td class="center">2012/01/21</td>
-								<td class="center"><span
-									class="label-success label label-default">完成</span></td>
-								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
-								</a></td>
-							</tr>
-							<tr>
-								<td>123456</td>
-								<td>Christopher</td>
-								<td class="center">2012/08/23</td>
-								<td class="center"><span class="label-default label">未批改</span>
-								</td>
-								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
-								</a></td>
-							</tr>
-							<tr>
-								<td>123456</td>
-								<td>Andro Christopher</td>
-								<td class="center">2012/08/23</td>
-								<td class="center"><span class="label-default label">未批改</span>
-								</td>
-								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
-								</a></td>
-							</tr>
-							<tr>
-								<td>123456</td>
-								<td>Jhon Doe</td>
-								<td class="center">2012/06/01</td>
-								<td class="center"><span class="label-default label">未批改</span>
-								</td>
-								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
-								</a></td>
-							</tr>
-							<tr>
-								<td>123456</td>
-								<td>Lorem Ipsum</td>
-								<td class="center">2012/03/01</td>
-								<td class="center"><span
-									class="label-warning label label-default">批改中</span></td>
-								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
-								</a></td>
-							</tr>
-							<tr>
-								<td>123456</td>
-								<td>Abraham</td>
-								<td class="center">2012/03/01</td>
-								<td class="center"><span
-									class="label-warning label label-default">批改中</span></td>
-								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
-								</a></td>
-							</tr>
-							<tr>
-								<td>123456</td>
-								<td>Brown Blue</td>
-								<td class="center">2012/03/01</td>
-								<td class="center"><span
-									class="label-warning label label-default">批改中</span></td>
-								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
-								</a></td>
-							</tr>
-							<tr>
-								<td>123456</td>
-								<td>Worth Name</td>
-								<td class="center">2012/03/01</td>
-								<td class="center"><span
-									class="label-warning label label-default">批改中</span></td>
-								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 批改
-								</a></td>
-							</tr>
+							
 						</tbody>
 					</table>
 				</div>

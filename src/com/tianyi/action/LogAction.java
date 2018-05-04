@@ -47,13 +47,29 @@ public class LogAction extends ActionSupport implements SessionAware {
 		if (studentService != null) {
 			queryResult = studentService.findByLogin(username, password);
 		}
-           System.out.println(queryResult);
+          
 		if (queryResult.equals("LoginFailure")) {
 			return ERROR;
-		} else {
+		} else if(studentService.usertype.equals("teacher")){
+			
 			session.put("user",username );
 			session.put("pw",password );
 			session.put("insertName", username);
+			session.put("userType", studentService.usertype);
+			return "teacherSuccess";
+		} else if(studentService.usertype.equals("admin")) {
+			session.put("user",username );
+			session.put("pw",password );
+			session.put("insertName", username);
+			session.put("userType", studentService.usertype);
+			return "adminSuccess";
+		}
+		
+		else{
+			session.put("user",username );
+			session.put("pw",password );
+			session.put("insertName", username);
+			session.put("userType", studentService.usertype);
 		
 			return SUCCESS;
 		}

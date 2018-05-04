@@ -7,6 +7,9 @@
 	<package name="main" extends="struts-default">
 		<action name="login" class="com.tianyi.action.LogAction">
 			<result name="success">WEB-INF/jsp/account_student.jsp</result>
+			<result name="teacherSuccess" >account_teacher.jsp</result>  
+			<result name="adminSuccess" >account_admin.jsp</result>  
+			
 			<result name="error">WEB-INF/jsp/login-failure.jsp</result>
 		</action>
 		<action name="signup" class="com.tianyi.action.SignUpAction">
@@ -17,7 +20,7 @@
 			<result type="redirect">practice_listen.jsp?score=${usertext}</result>
 		</action>
 		<action name="proesswritingorder" class="com.tianyi.action.GenerateWritingOrderAction">
-			<result type="redirect">practice_listen.jsp?score=${usertext}</result>
+			<result type="redirect">Order_Confirm.jsp?sum=${price}</result>
 		</action>
 		
 		<action name="displayTopics" class="com.tianyi.action.ListeningTopicsAction">
@@ -36,6 +39,12 @@
 		</action>
 		<action name="getWritingTasks" class="com.tianyi.action.getWritingTopicsAction">
 			<result type="redirect">write_tasks.jsp?i1=${intro1}</result>
+
+		</action>
+		<action name="CCPayment" class="com.tianyi.action.processCreditCardPaymentAction">
+		    <result name="success">WEB-INF/jsp/account_student.jsp</result>
+			<result name="error">WEB-INF/jsp/account_student.jsp</result>
+			
 
 		</action>
 		

@@ -47,9 +47,9 @@
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">写作练习<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">分Task写作练习</a></li>
+						<li><a href="write_tasks.jsp">分Task写作练习</a></li>
 						<li class="divider"></li>
-						<li><a href="#">分话题写作练习</a></li>
+						<li><a href="write_topics.jsp">分话题写作练习</a></li>
 					</ul></li>
 				<li><a href="listen_topics.jsp">听力练习</a></li>
 
@@ -124,13 +124,13 @@
 							onclick="showAtRight('personalinformation.jsp')"><i
 								class="fa fa-file-text fa-fw fa-2x"></i> 测评能力记录</a></li>
 
-						<li><a href="#productmeun"
+						<li><a href="#practicelist"
 							class="nav-header menu-first collapsed" data-toggle="collapse">
 								<i class="fa fa-book fa-fw fa-2x"></i>&nbsp; 练习记录<b
 								class="caret"></b> <span class="sr-only">(current)</span>
 						</a></li>
-						<ul id="productmeun" class="nav nav-list collapse menu-second">
-							<li><a c onclick="showAtRight('productList.jsp')"><i
+						<ul id="practicelist" class="nav nav-list collapse menu-second">
+							<li><a c onclick="showAtRight('PracticeList_Write.jsp')"><i
 									class="fa fa-pencil-square fa-fw"></i> 写作练习记录</a></li>
 							<li><a href="###" onclick="showAtRight('productList.jsp')"><i
 									class="fa fa-microphone fa-fw"></i> 口语练习记录</a></li>
@@ -150,18 +150,19 @@
 			</div>
 		</div>
 		<div class="col-md-10 column">
-			<h1 class="page-header">
-				<i class="fa fa-cog fa-spin"></i>&nbsp;学生个人主页<small>&nbsp;&nbsp;&nbsp;欢迎来到学生个人主页</small>
+			<div id="content">
+				<h1 class="page-header">
+					<i class="fa fa-cog fa-spin"></i>&nbsp;学生个人主页<small>&nbsp;&nbsp;&nbsp;欢迎来到学生个人主页</small>
 
-				<!-- 载入左侧菜单指向的jsp（或html等）页面内容 -->
-				<div id="content">
+					<!-- 载入左侧菜单指向的jsp（或html等）页面内容 -->
+
 
 					<h1>
 						<s:property value="#session.user"></s:property>
 
 					</h1>
-			</h1>
-			<%
+				</h1>
+				<%
 			  HttpSession s = request.getSession(); 
 			   String currentUserName=(String)s.getAttribute("insertName");
 				String driverName = "com.mysql.jdbc.Driver";
@@ -179,48 +180,91 @@
 				Statement statement = connection.createStatement();
 				String sql = "SELECT * FROM " + tableName+" WHERE UserName='"+currentUserName+"'";
 				ResultSet rs = statement.executeQuery(sql);
+			
 			%>
-			<h4>
-				<strong>我的练习：</strong>
-			</h4>
-			 <thead>
-   <tr>
-        <th field ="1" width="50">听力练习&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th field ="2" width="50">听写正确率&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th field ="3" width="50">听写时间</th>
-        <br> 
-    </tr>
-    </thead>
-    <tbody>
-    <%
+				<h4>
+					<strong>我的练习：</strong>
+				</h4>
+				<thead>
+					<tr>
+						<th field="1" width="50">听力练习&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+						<th field="2" width="50">听写正确率&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+						<th field="3" width="50">听写时间</th>
+						<br>
+					</tr>
+				</thead>
+				<tbody>
+					<%
         while (rs.next()) {
     %>
-    <tr>
+					<tr>
 
-        <a href="###"> 	
-            <%
+						<a href="###"> <%
                 out.print(rs.getString(3));
             %>
-        </a>
-        <td>
-            <%
+						</a>
+						<td>
+							<%
                 out.print(rs.getString(5));
             %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            <%
+						</td>
+						<td>
+							<%
                 out.print(rs.getString(4));
             %>
-        </td>
-        <br> 
-    </tr>
-    </tbody>
-    <%
+						</td>
+						<br>
+					</tr>
+				</tbody>
+				<%
         }
     %>
+
+
+
+				<h4>
+					<strong>我的订单：</strong>
+				</h4>
+				<thead>
+					<tr>
+						<th field="1" width="50">订单号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+						<th field="2" width="50">订单金额&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+						<th field="3" width="50">订单状态</th>
+						<br>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+				
+	String sql2="SELECT * FROM payment WHERE UserName='"+currentUserName+"'";
+	ResultSet rs2 = statement.executeQuery(sql2);
+        while (rs2.next()) {
+    %>
+					<tr>
+
+						<a href="###"> <%
+                out.print(rs2.getString(1));
+            %>
+						</a>
+						<td>
+							<%
+                out.print(rs2.getString(5));
+            %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</td>
+						<td>
+							<%
+                out.print(rs2.getString(6));
+            %>
+						</td>
+						<br>
+					</tr>
+				</tbody>
+				<%
+        }
+    %>
+			</div>
+			<!-- /.main-container -->
 		</div>
-		<!-- /.main-container -->
-	</div>
 	</div>
 
 

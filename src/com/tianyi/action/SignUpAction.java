@@ -15,7 +15,7 @@ public class SignUpAction extends ActionSupport {
 	private String password;
 	private String Name;
 	private String phone;
-	private String accountType;
+	private String accounttype;
 	private String emailAddress;
 	private String pageName;
     //getters & setters
@@ -43,11 +43,11 @@ public class SignUpAction extends ActionSupport {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public String getaccountType() {
-        return accountType;
+    public String getAccounttype() {
+        return accounttype;
     }
-    public void setaccountType(String accountType) {
-        this.accountType = accountType;
+    public void setAccounttype(String accounttype) {
+        this.accounttype = accounttype;
     }
     
    /* public String getEmail() {
@@ -75,13 +75,13 @@ public class SignUpAction extends ActionSupport {
     	
     	String insertResult = "";
     	System.out.println(username+" "+password+" "+Name+" "+
-    			phone+" "+ accountType+" "+ emailAddress);
+    			phone+" "+ accounttype+" "+ emailAddress);
 		StudentService studentService = new StudentService();
 
 		if ( studentService != null) {
 		
 			insertResult = studentService.save(username, password, Name,
-					phone, accountType, emailAddress);
+					phone, accounttype, emailAddress);
 							
 		}
 		if (insertResult.equals("SignupSuccess")) {

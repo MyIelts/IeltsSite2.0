@@ -116,6 +116,7 @@
 			</div>
 		</div>
 		<div class="col-md-10 column">
+		<div id="content">
 			<h1 class="page-header">
 				<i class="fa fa-cog fa-spin"></i>&nbsp;教师个人主页<small>&nbsp;&nbsp;&nbsp;欢迎来到教师个人主页</small>
 
@@ -127,7 +128,7 @@
 
 				</h1>
 			</h1>
-			<div id="content">
+			
 				<h4>
 					<strong>使用指南：</strong><br> <br> <br>默认页面内容……
 				</h4>

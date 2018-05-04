@@ -173,8 +173,7 @@ body {
 								</div>
 								<hr />
 								<h2 id="mytime">00:00:00</h2>
-								<textarea cols=40 rows=10 name=usertext class="textbox"><s:property
-										value="#parameters.t" /> </textarea>
+								<textarea cols=40 rows=10 name=usertext class="textbox"></textarea>
 								<%-- 	<s:textfield label="用户名" name="username" cssClass="col-lg-12"
 									placeholder="User Name" /> --%>
 

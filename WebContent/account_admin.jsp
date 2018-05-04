@@ -16,8 +16,7 @@
 <link rel="stylesheet" href="css/index.css">
 <!-- 修改自Bootstrap官方Demon，你可以按自己的喜好制定CSS样式 -->
 <link rel="stylesheet" href="css/font-change.css">
-<style>
-</style>
+
 </head>
 <body>
 	<div class="navbar navbar-default">
@@ -106,6 +105,18 @@
 									class="fa fa-user-plus fa-fw"></i>&nbsp;待审核的用户</a></li>
 						</ul>
 
+						<li><a href="#tasksum"
+							class="nav-header menu-first collapsed" data-toggle="collapse">
+								<i class="fa fa-wrench fa-fw fa-2x"></i>&nbsp;查看/分配任务列表<b
+								class="caret"></b> <span class="sr-only">(current)</span>
+						</a></li>
+						<ul id="tasksum" class="nav nav-list collapse menu-second">
+							<li><a href="###" onclick="showAtRight('Tasklist_wsum.jsp')"><i
+									class="fa fa-pencil-square fa-fw"></i>&nbsp;写作任务列表</a></li>
+							<li><a href="###" onclick="showAtRight('productList.jsp')"><i
+									class="fa fa-microphone fa-fw"></i>&nbsp;口语题库</a></li>
+						</ul>
+
 						<li><a href="#libraryupdate"
 							class="nav-header menu-first collapsed" data-toggle="collapse">
 								<i class="fa fa-wrench fa-fw fa-2x"></i>&nbsp;查看/更新题库<b
@@ -127,7 +138,7 @@
 								class="fa fa-envelope-square fa-fw fa-2x"></i>&nbsp;查看/处理投诉反馈</a></li>
 
 						<li><a href="###"
-							onclick="showAtRight('personalinformation.jsp')"><i
+							onclick="showAtRight('BankStatement.jsp')"><i
 								class="fa fa-yen fa-fw fa-2x"></i>&nbsp;教师工资流水单</a></li>
 
 						<li><a href="###"
@@ -141,25 +152,26 @@
 			</div>
 		</div>
 		<div class="col-md-10 column">
-			<h1 class="page-header">
-				<i class="fa fa-cog fa-spin"></i>&nbsp;管理员个人主页<small>&nbsp;&nbsp;&nbsp;欢迎来到管理员个人主页</small>
+			<div id="content">
+				<h1 class="page-header">
 
-				<!-- 载入左侧菜单指向的jsp（或html等）页面内容 -->
-				<div id="content">
 
+					<!-- 载入左侧菜单指向的jsp（或html等）页面内容 -->
+
+					<i class="fa fa-cog fa-spin"></i>&nbsp;管理员个人主页<small>&nbsp;&nbsp;&nbsp;欢迎来到管理员个人主页</small>
 					<h1>
 						<s:property value="#session.user"></s:property>
 
 					</h1>
-			</h1>
-			<h4>
-				<strong>使用指南：</strong><br> <br> <br>默认页面内容……
-			</h4>
+				</h1>
+				<h4>
+					<strong>使用指南：</strong><br> <br> <br>默认页面内容……
+				</h4>
 
+			</div>
+			<!-- /.main-container -->
 		</div>
-		<!-- /.main-container -->
 	</div>
-	
 
 
 	<script type="text/javascript">
@@ -196,7 +208,6 @@
 				}
 			}
 		}
-
 		/*
 		 * 利用div实现左边点击右边显示的效果（以id="content"的div进行内容展示）
 		 * 注意：

@@ -45,7 +45,9 @@
 									class="label-success label label-default">完成</span></td>
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
-								</a> </td>
+								</a> <a class="btn btn-danger" href="#"> <i
+										class="fa fa-edit fa-fw"></i> 批改
+								</a></td>
 							</tr>
 							<tr>
 								<td>123456</td>
@@ -55,7 +57,9 @@
 									class="label-success label label-default">完成</span></td>
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
-								</a> </td>
+								</a> <a class="btn btn-danger" href="#"> <i
+										class="fa fa-edit fa-fw"></i> 批改
+								</a></td>
 							</tr>
 							<tr>
 								<td>123456</td>
@@ -65,7 +69,9 @@
 									class="label-success label label-default">完成</span></td>
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
-								</a> </td>
+								</a> <a class="btn btn-danger" href="#"> <i
+										class="fa fa-edit fa-fw"></i> 批改
+								</a></td>
 							</tr>
 							<tr>
 								<td>123456</td>
@@ -75,7 +81,9 @@
 									class="label-success label label-default">完成</span></td>
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
-								</a> </td>
+								</a> <a class="btn btn-danger" href="#"> <i
+										class="fa fa-edit fa-fw"></i> 批改
+								</a></td>
 							</tr>
 							<tr>
 								<td>123456</td>
@@ -86,9 +94,7 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-download fa-fw"></i> 下载批改
-								</a> <a class="btn btn-info" href="#">
-										<i class="fa fa-upload fa-fw"></i> 上传
+										class="fa fa-edit fa-fw"></i> 批改
 								</a></td>
 							</tr>
 							<tr>
@@ -100,9 +106,7 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-download fa-fw"></i> 下载批改
-								</a> <a class="btn btn-info" href="#">
-										<i class="fa fa-upload fa-fw"></i> 上传
+										class="fa fa-edit fa-fw"></i> 批改
 								</a></td>
 							</tr>
 							<tr>
@@ -113,8 +117,8 @@
 									class="label-warning label label-default">批改中</span></td>
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-info" href="#">
-										<i class="fa fa-upload fa-fw"></i> 上传
+								</a> <a class="btn btn-danger" href="#"> <i
+										class="fa fa-edit fa-fw"></i> 批改
 								</a></td>
 							</tr>
 							<tr>
@@ -162,9 +166,7 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-download fa-fw"></i> 下载批改
-								</a> <a class="btn btn-info" href="#">
-										<i class="fa fa-upload fa-fw"></i> 上传
+										class="fa fa-edit fa-fw"></i> 批改
 								</a></td>
 							</tr>
 							<tr>
@@ -176,9 +178,7 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-download fa-fw"></i> 下载批改
-								</a> <a class="btn btn-info" href="#">
-										<i class="fa fa-upload fa-fw"></i> 上传
+										class="fa fa-edit fa-fw"></i> 批改
 								</a></td>
 							</tr>
 							<tr>
@@ -190,9 +190,7 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-download fa-fw"></i> 下载批改
-								</a> <a class="btn btn-info" href="#">
-										<i class="fa fa-upload fa-fw"></i> 上传
+										class="fa fa-edit fa-fw"></i> 批改
 								</a></td>
 							</tr>
 							<tr>
@@ -204,9 +202,7 @@
 								<td class="center"><a class="btn btn-success" href="#">
 										<i class="fa fa-search fa-fw"></i> 查看
 								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-download fa-fw"></i> 下载批改
-								</a> <a class="btn btn-info" href="#">
-										<i class="fa fa-upload fa-fw"></i> 上传
+										class="fa fa-edit fa-fw"></i> 批改
 								</a></td>
 							</tr>
 							<tr>

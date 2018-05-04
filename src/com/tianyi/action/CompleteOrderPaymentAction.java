@@ -13,7 +13,7 @@ import com.tianyi.repository.OrderRepositoryRepository;
 import com.tianyi.service.ScriptService;
 import com.tianyi.service.StudentService;
 
-public class GenerateWritingOrderAction extends ActionSupport  {
+public class CompleteOrderPaymentAction extends ActionSupport  {
 
 	private static final long serialVersionUID = 1L;
 	private String username;// ук╨е
@@ -58,13 +58,14 @@ public class GenerateWritingOrderAction extends ActionSupport  {
  
 	
 	public String execute() {
-		
+			System.out.println("process order!!!");
 		username= (String)ActionContext.getContext().getSession().get("insertName");
 		mtitle=(String)ActionContext.getContext().getSession().get("writingQuestion");
 		try {
 			price=WR.storeWritingRecord(username, usertext, mtitle);
-			ActionContext.getContext().getSession().put("currentOrder", WR.orderNumber);
 			
+			
+		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
