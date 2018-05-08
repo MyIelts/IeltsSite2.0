@@ -126,7 +126,7 @@ a {
 								}
 							%>
 						</table>
-						<a href="#"><button type="submit" class="btn btn-primary"
+						<a href="assignTasks"><button type="submit" class="btn btn-primary"
 								style="height: 40px; width: 220px;" id="triggerBtn">分配任务</button></a>
 					</div>
 					<!-- /.main-container -->

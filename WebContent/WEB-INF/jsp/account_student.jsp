@@ -81,6 +81,14 @@
 						<li class="divider"></li>
 						<li><a href="#">更多内容</a></li>
 					</ul></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown"><i class="fa fa-bell fa-fw"></i>&nbsp;消息<b
+						class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">口语评分提示</a></li>
+						<li class="divider"></li>
+						<li><a href="#">作文批改结果</a></li>
+					</ul></li>
 			</ul>
 		</div>
 		<!-- /.nav-collapse -->

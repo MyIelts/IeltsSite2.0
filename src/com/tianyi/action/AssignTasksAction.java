@@ -20,6 +20,7 @@ public class AssignTasksAction extends ActionSupport  {
 	private String username;// ’À∫≈
 	private String usertext;// √‹¬Î
     private boolean updateresult;
+    private boolean updateresultPhase2;
 	private ScriptService scriptservice;
 	TasksAssignmentRepository TR=new TasksAssignmentRepository();
 	ScriptService SService=new ScriptService();
@@ -41,7 +42,7 @@ public class AssignTasksAction extends ActionSupport  {
 		
 		try {
 			updateresult=TR.assignTasks();
-			
+			updateresultPhase2=TR.assignTasksPhase2();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

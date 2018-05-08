@@ -3,6 +3,8 @@
 <head>
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
 <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="bootstrap\css\font-awesome-4.7.0\css\font-awesome.css">
 <style>
 body {
 	height: 100%;
@@ -54,7 +56,7 @@ body {
 						<li class="divider"></li>
 						<li><a href="#">分话题练习</a></li>
 					</ul></li>
-					
+
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="active"><a href="StudentEnrollmentWithStruts">主页</a></li>
@@ -67,6 +69,14 @@ body {
 						<li><a href="#">联系我们</a></li>
 						<li class="divider"></li>
 						<li><a href="#">更多内容</a></li>
+					</ul></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown"><i class="fa fa-bell fa-fw"></i>&nbsp;消息<b
+						class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">口语评分提示</a></li>
+						<li class="divider"></li>
+						<li><a href="#">作文批改结果</a></li>
 					</ul></li>
 			</ul>
 		</div>
@@ -87,10 +97,12 @@ body {
 		<div></div>
 	</div> -->
 	<script src="jquery-1.8.3.js">
-</script>
+		
+	</script>
 
 	<script src="bootstrap/js/bootstrap.js">
-</script>
+		
+	</script>
 
 </body>
 </html>

@@ -22,7 +22,9 @@
 		<action name="proesswritingorder" class="com.tianyi.action.GenerateWritingOrderAction">
 			<result type="redirect">Order_Confirm.jsp?sum=${price}</result>
 		</action>
-		
+		<action name="assignTasks" class="com.tianyi.action.AssignTasksAction">
+			<result type="redirect">account_admin.jsp</result>
+		</action>
 		<action name="displayTopics" class="com.tianyi.action.ListeningTopicsAction">
 			<result type="redirect">listen_topics.jsp?i1=${intro1}&amp;t1=${title1}&amp;i2=${intro2}&amp;t2=${title2}&amp;i3=${intro3}&amp;t3=${title3}&amp;i4=${intro4}&amp;t4=${title4}
 			</result>

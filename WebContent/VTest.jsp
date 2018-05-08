@@ -191,8 +191,8 @@ keyframes animate-positive { 0% {
 							<div class="progress progress-striped">
 								<div class="progress-bar progress-bar-success"
 									role="progressbar" aria-valuenow="60" aria-valuemin="0"
-									aria-valuemax="100" style="width: 90%;">
-									<span class="sr-only">90% 完成（成功）</span>
+									aria-valuemax="100" style="width: 20%;">
+									<span class="sr-only">20% 完成（成功）</span>
 								</div>
 							</div>
 							<div class="row1">
