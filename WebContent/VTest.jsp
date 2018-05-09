@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ page import="java.sql.*"%>
 <html>
 <head>
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
@@ -188,6 +189,84 @@ keyframes animate-positive { 0% {
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="col-md-9 column">
+							<%
+								HttpSession s = request.getSession();
+								String wordIndexValueString = (String) s.getAttribute("wordIndex");
+								int WordIndexValue=Integer.parseInt(wordIndexValueString);
+								String setEmpty="";
+								String word="";
+								String meaning="";
+								String fakeMeanig1="";
+								String fakeMeanig2="";
+								String fakeMeanig3="";
+                                s.setAttribute("writingCatagory",setEmpty ); 
+                                String tempQuestion="";
+								String driverName = "com.mysql.jdbc.Driver";
+
+								String userName = "root";
+
+								String userPasswd = "";
+
+								String dbName = "ielts";
+
+								String tableName = "writingmaterials";
+								String url = "jdbc:mysql://localhost:3306/" + dbName + "?user="
+										+ userName + "&password=" + userPasswd;
+								Class.forName("com.mysql.jdbc.Driver").newInstance();
+								Connection connection = DriverManager.getConnection(url);
+								Statement statement = connection.createStatement();
+								
+								
+								if(WordIndexValue<10){
+									String sql = "entry limit 10";
+									ResultSet rs = statement.executeQuery(sql);
+								
+									//random record
+									/*SELECT * FROM `table`
+									WHERE id >= (SELECT floor( RAND() * ((SELECT MAX(id) FROM `table`)-(SELECT MIN(id) FROM `table`)) + (SELECT MIN(id) FROM `table`)))
+									ORDER BY id LIMIT 1;*/
+									
+									if (rs != null) {
+										while (rs.next()) {
+											word=rs.getString(1);
+											meaning=rs.getString(2);
+										}
+									}
+									
+								}else if(WordIndexValue<20){
+								
+									String sql = "entry medium 10";
+									ResultSet rs = statement.executeQuery(sql);
+									//random record
+									/*SELECT * FROM `table`
+									WHERE id >= (SELECT floor( RAND() * ((SELECT MAX(id) FROM `table`)-(SELECT MIN(id) FROM `table`)) + (SELECT MIN(id) FROM `table`)))
+									ORDER BY id LIMIT 1;*/
+
+									if (rs != null) {
+										while (rs.next()) {
+											word=rs.getString(1);
+											meaning=rs.getString(2);
+										}
+									}
+									
+								}else{
+								
+									String sql = "entry advanced 10";
+									ResultSet rs = statement.executeQuery(sql);
+									//random record
+									/*SELECT * FROM `table`
+									WHERE id >= (SELECT floor( RAND() * ((SELECT MAX(id) FROM `table`)-(SELECT MIN(id) FROM `table`)) + (SELECT MIN(id) FROM `table`)))
+									ORDER BY id LIMIT 1;*/
+									if (rs != null) {
+										while (rs.next()) {
+											word=rs.getString(1);
+											meaning=rs.getString(2);
+										}
+									}
+								}
+								
+								
+							%>
 							<div class="progress progress-striped">
 								<div class="progress-bar progress-bar-success"
 									role="progressbar" aria-valuenow="60" aria-valuemin="0"

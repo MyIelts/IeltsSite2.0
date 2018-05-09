@@ -70,7 +70,7 @@ public class LogAction extends ActionSupport implements SessionAware {
 			session.put("pw",password );
 			session.put("insertName", username);
 			session.put("userType", studentService.usertype);
-		
+			session.put("wordIndex", "-1");
 			return SUCCESS;
 		}
 	
