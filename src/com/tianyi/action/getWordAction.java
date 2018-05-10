@@ -1,6 +1,9 @@
 package com.tianyi.action;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.ServletActionContext;
@@ -43,13 +46,14 @@ public class getWordAction extends ActionSupport  {
 		wordIndexValue=(String)ActionContext.getContext().getSession().get("wordIndex");
 		tempWordIndexValue=Integer.parseInt(wordIndexValue)+1;
 		wordIndexValue=tempWordIndexValue+"";
-	    
-		
 		
 		ActionContext.getContext().getSession().put("wordIndex", wordIndexValue);
-	
+		if (tempWordIndexValue>30) {
+			ActionContext.getContext().getSession().put("wordIndex", "-1");
+			return "generateScore";
+		}else{return SUCCESS;}
 		 
-			return SUCCESS;
+			
 		
 	
 }}

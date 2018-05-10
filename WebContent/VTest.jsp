@@ -199,6 +199,7 @@ keyframes animate-positive { 0% {
 								String fakeMeanig1="";
 								String fakeMeanig2="";
 								String fakeMeanig3="";
+								
                                 s.setAttribute("writingCatagory",setEmpty ); 
                                 String tempQuestion="";
 								String driverName = "com.mysql.jdbc.Driver";
@@ -265,6 +266,13 @@ keyframes animate-positive { 0% {
 									}
 								}
 								
+							
+								List<String> list = new ArrayList<String>();  
+								list.add(meaning);
+								list.add(fakeMeanig1);
+								list.add(fakeMeanig2);
+								list.add(fakeMeanig3);
+								Collections.shuffle(list); 
 								
 							%>
 							<div class="progress progress-striped">
