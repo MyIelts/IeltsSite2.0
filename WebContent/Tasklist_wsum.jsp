@@ -71,18 +71,18 @@ a {
 						<ul class="nav1" style="display: inline">
 							<!-- 一级菜单 -->
 							<li style="display: inline"><a href="###"
-								onclick="showAtRight('personalinformation.jsp')"><i
+								onclick="showAtRight('Tasklist_wsum.jsp')"><i
 									class="fa fa-envelope-square fa-fw fa-2x"></i>&nbsp;全部写作任务</a></li>
 							<li style="display: inline"><a href="###"
 								onclick="showAtRight('Tasklist_wwait.jsp')"><i
 									class="fa fa-envelope-square fa-fw fa-2x"></i>&nbsp;待批改的任务</a></li>
 
 							<li style="display: inline"><a href="###"
-								onclick="showAtRight('personalinformation.jsp')"><i
+								onclick="showAtRight('Tasklist_wpending.jsp')"><i
 									class="fa fa-yen fa-fw fa-2x"></i>&nbsp;批改中的任务</a></li>
 
 							<li style="display: inline"><a href="###"
-								onclick="showAtRight('personalinformation.jsp')"><i
+								onclick="showAtRight('Tasklist_wcomplete.jsp')"><i
 									class="fa fa-pie-chart fa-fw fa-2x"></i>&nbsp;已批改的任务</a></li>
 						</ul>
 					</div>

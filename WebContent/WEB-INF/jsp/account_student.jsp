@@ -151,6 +151,11 @@
 								<i class="fa fa-wpforms fa-fw fa-2x"></i>&nbsp; 订单记录 <span
 								class="sr-only">(current)</span>
 						</a></li>
+						<li><a href="#recordmeun"
+							class="nav-header menu-first collapsed" data-toggle="collapse">
+								<i class="fa fa-wpforms fa-fw fa-2x"></i>&nbsp; 反馈记录 <span
+								class="sr-only">(current)</span>
+						</a></li>
 
 					</ul>
 
@@ -171,25 +176,24 @@
 					</h1>
 				</h1>
 				<%
-			  HttpSession s = request.getSession(); 
-			   String currentUserName=(String)s.getAttribute("insertName");
-				String driverName = "com.mysql.jdbc.Driver";
+					HttpSession s = request.getSession();
+					String currentUserName = (String) s.getAttribute("insertName");
+					String driverName = "com.mysql.jdbc.Driver";
 
-				String userName = "root";
+					String userName = "root";
 
-				String userPasswd = "";
+					String userPasswd = "";
 
-				String dbName = "ielts";
+					String dbName = "ielts";
 
-				String tableName = "listeningrecords";
-				String url = "jdbc:mysql://localhost:3306/" + dbName + "?user=" + userName + "&password=" + userPasswd;
-				Class.forName("com.mysql.jdbc.Driver").newInstance();
-				Connection connection = DriverManager.getConnection(url);
-				Statement statement = connection.createStatement();
-				String sql = "SELECT * FROM " + tableName+" WHERE UserName='"+currentUserName+"'";
-				ResultSet rs = statement.executeQuery(sql);
-			
-			%>
+					String tableName = "listeningrecords";
+					String url = "jdbc:mysql://localhost:3306/" + dbName + "?user=" + userName + "&password=" + userPasswd;
+					Class.forName("com.mysql.jdbc.Driver").newInstance();
+					Connection connection = DriverManager.getConnection(url);
+					Statement statement = connection.createStatement();
+					String sql = "SELECT * FROM " + tableName + " WHERE UserName='" + currentUserName + "'";
+					ResultSet rs = statement.executeQuery(sql);
+				%>
 				<h4>
 					<strong>我的练习：</strong>
 				</h4>
@@ -203,30 +207,30 @@
 				</thead>
 				<tbody>
 					<%
-        while (rs.next()) {
-    %>
+						while (rs.next()) {
+					%>
 					<tr>
 
 						<a href="###"> <%
-                out.print(rs.getString(3));
-            %>
+ 	out.print(rs.getString(3));
+ %>
 						</a>
 						<td>
 							<%
-                out.print(rs.getString(5));
-            %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								out.print(rs.getString(5));
+							%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						</td>
 						<td>
 							<%
-                out.print(rs.getString(4));
-            %>
+								out.print(rs.getString(4));
+							%>
 						</td>
 						<br>
 					</tr>
 				</tbody>
 				<%
-        }
-    %>
+					}
+				%>
 
 
 
@@ -243,33 +247,32 @@
 				</thead>
 				<tbody>
 					<%
-				
-	String sql2="SELECT * FROM payment WHERE UserName='"+currentUserName+"'";
-	ResultSet rs2 = statement.executeQuery(sql2);
-        while (rs2.next()) {
-    %>
+						String sql2 = "SELECT * FROM payment WHERE UserName='" + currentUserName + "'";
+						ResultSet rs2 = statement.executeQuery(sql2);
+						while (rs2.next()) {
+					%>
 					<tr>
 
 						<a href="###"> <%
-                out.print(rs2.getString(1));
-            %>
+ 	out.print(rs2.getString(1));
+ %>
 						</a>
 						<td>
 							<%
-                out.print(rs2.getString(5));
-            %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								out.print(rs2.getString(5));
+							%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						</td>
 						<td>
 							<%
-                out.print(rs2.getString(6));
-            %>
+								out.print(rs2.getString(6));
+							%>
 						</td>
 						<br>
 					</tr>
 				</tbody>
 				<%
-        }
-    %>
+					}
+				%>
 			</div>
 			<!-- /.main-container -->
 		</div>

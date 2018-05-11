@@ -17,14 +17,19 @@
 	<div class="row">
 		<div class="box col-md-12">
 			<div class="box-inner">
-				<div>
-					<h3>
-						<i class="fa fa-user-plus fa-fw"></i>待审核的用户
-					</h3>
-					<br>
-
+				<div id="main-container">
+					<div class="container-fluid"></div>
 				</div>
-				<div class="box-content">
+				<div class="col-md-10 column">
+
+
+					<div>
+						<ul class="breadcrumb">
+							<li><a href="#">个人主页</a></li>
+							<li><a href="#">写作任务列表</a></li>
+							<li><a href="#">待分配任务列表</a></li>
+						</ul>
+					</div>
 					<table
 						class="table table-striped table-bordered bootstrap-datatable datatable responsive">
 						<thead>
@@ -41,29 +46,23 @@
 								<td>David R</td>
 								<td class="center">2012/01/01</td>
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
-								</a></td>
+										<i class="fa fa-search fa-fw"></i> 审核
+								</a> </td>
 							</tr>
 							<tr>
 								<td>123456</td>
 								<td>Chris Jack</td>
 								<td class="center">2012/01/01</td>
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
-								</a></td>
+										<i class="fa fa-search fa-fw"></i> 审核
+								</a> </td>
 							</tr>
 							<tr>
 								<td>123456</td>
 								<td>Jack Chris</td>
 								<td class="center">2012/01/01</td>
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
+										<i class="fa fa-search fa-fw"></i> 审核
 								</a></td>
 							</tr>
 							<tr>
@@ -71,70 +70,56 @@
 								<td>Muhammad Usman</td>
 								<td class="center">2012/01/01</td>
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
+										<i class="fa fa-search fa-fw"></i> 审核
 								</a></td>
 							</tr>
 							<tr>
 								<td>123456</td>
 								<td>Sheikh Heera</td>
 								<td class="center">2012/02/01</td>
-								</td>
+								
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
-								</a></td>
+										<i class="fa fa-search fa-fw"></i> 审核
+								</a> </td>
 							</tr>
 							<tr>
 								<td>123456</td>
 								<td>Helen Garner</td>
 								<td class="center">2012/02/01</td>
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
-								</a></td>
+										<i class="fa fa-search fa-fw"></i> 审核
+								</a> </td>
 							</tr>
 							<tr>
 								<td>123456</td>
 								<td>Saruar Ahmed</td>
 								<td class="center">2012/03/01</td>				
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
-								</a></td>
+										<i class="fa fa-search fa-fw"></i> 审核
+								</a> </td>
 							</tr>
 							<tr>
 								<td>123456</td>
 								<td>Ahemd Saruar</td>
 								<td class="center">2012/03/01</td>								
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
-								</a></td>
+										<i class="fa fa-search fa-fw"></i> 审核
+								</a> </td>
 							</tr>
 							<tr>
 								<td>123456</td>
 								<td>Habib Rizwan</td>
 								<td class="center">2012/01/21</td>								
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
-								</a></td>
+										<i class="fa fa-search fa-fw"></i> 审核
+								</a> </td>
 							</tr>
 							<tr>
 								<td>123456</td>
 								<td>Rizwan Habib</td>
 								<td class="center">2012/01/21</td>								
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
+										<i class="fa fa-search fa-fw"></i> 审核
 								</a></td>
 							</tr>
 							<tr>
@@ -142,9 +127,7 @@
 								<td>Amrin Sana</td>
 								<td class="center">2012/08/23</td>								
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
+										<i class="fa fa-search fa-fw"></i> 审核
 								</a></td>
 							</tr>
 							<tr>
@@ -152,19 +135,15 @@
 								<td>Sana Amrin</td>
 								<td class="center">2012/08/23</td>							
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
-								</a></td>
+										<i class="fa fa-search fa-fw"></i> 审核
+								</a> </td>
 							</tr>
 							<tr>
 								<td>123456</td>
 								<td>Ifrah Jannat</td>
 								<td class="center">2012/06/01</td>								
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
+										<i class="fa fa-search fa-fw"></i> 审核
 								</a></td>
 							</tr>
 							<tr>
@@ -172,9 +151,7 @@
 								<td>Jannat Ifrah</td>
 								<td class="center">2012/06/01</td>								
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
+										<i class="fa fa-search fa-fw"></i> 审核
 								</a></td>
 							</tr>
 							<tr>
@@ -182,10 +159,8 @@
 								<td>Robert</td>
 								<td class="center">2012/03/01</td>								
 								<td class="center"><a class="btn btn-success" href="#">
-										<i class="fa fa-search fa-fw"></i> 查看
-								</a> <a class="btn btn-danger" href="#"> <i
-										class="fa fa-edit fa-fw"></i> 审核
-								</a></td>
+										<i class="fa fa-search fa-fw"></i> 审核
+								</a> </td>
 							</tr>
 							
 						</tbody>

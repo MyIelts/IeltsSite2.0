@@ -87,7 +87,7 @@
 					<ul class="nav nav-sidebar">
 						<!-- 一级菜单 -->
 						<li><a href="###"
-							onclick="showAtRight('personalinformation.jsp')"><i
+							onclick="showAtRight('PersonalInformation.jsp')"><i
 								class="fa fa-pencil fa-fw fa-2x"></i>&nbsp;查看/修改个人信息</a></li>
 						<!-- 二级菜单 -->
 						<!-- 注意一级菜单中<a>标签内的href="#……"里面的内容要与二级菜单中<ul>标签内的id="……"里面的内容一致 -->
@@ -103,6 +103,9 @@
 							<li><a href="###"
 								onclick="showAtRight('Users_waitforapproved.jsp')"><i
 									class="fa fa-user-plus fa-fw"></i>&nbsp;待审核的用户</a></li>
+							<li><a href="###"
+								onclick="showAtRight('Adminlist.jsp')"><i
+									class="fa fa-vcard fa-fw"></i>&nbsp;查看/修改管理员列表</a></li>
 						</ul>
 
 						<li><a href="#tasksum"
@@ -137,12 +140,7 @@
 							onclick="showAtRight('personalinformation.jsp')"><i
 								class="fa fa-envelope-square fa-fw fa-2x"></i>&nbsp;查看/处理投诉反馈</a></li>
 
-						<li><a href="###"
-							onclick="showAtRight('BankStatement.jsp')"><i
-								class="fa fa-yen fa-fw fa-2x"></i>&nbsp;教师工资流水单</a></li>
-
-						<li><a href="###"
-							onclick="showAtRight('personalinformation.jsp')"><i
+						<li><a href="###" onclick="showAtRight('BankStatement.jsp')"><i
 								class="fa fa-pie-chart fa-fw fa-2x"></i>&nbsp;查看网站资金流</a></li>
 
 

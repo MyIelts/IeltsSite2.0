@@ -59,7 +59,7 @@ body {
 
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="StudentEnrollmentWithStruts">主页</a></li>
+				<li ><a href="StudentEnrollmentWithStruts">主页</a></li>
 				<li><a href="signup.jsp">注册</a></li>
 				<li><a href="login.jsp">登录</a></li>
 

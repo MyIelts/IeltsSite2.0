@@ -136,8 +136,6 @@ input[type="text"], input[type="password"] {
 								<s:textfield label="雅思成绩" name="Ielts Score" cssClass="col-lg-11"
 									placeholder="Ielts Score" />
 
-】
-
 
 								<s:textfield label="电子邮件" name="emailAddress"
 									cssClass="col-lg-11" placeholder="Email Address" />

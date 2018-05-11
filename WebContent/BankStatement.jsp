@@ -44,7 +44,7 @@
 	<div>
 		<ul class="breadcrumb">
 			<li><a href="#">个人主页</a></li>
-			<li><a href="#">资金流水</a></li>
+			<li><a href="#">网站资金流水</a></li>
 		</ul>
 	</div>
 	<div class="col-lg-5">

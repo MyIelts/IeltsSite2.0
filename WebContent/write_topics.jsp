@@ -101,6 +101,8 @@ ul.testtest li {
 
 ul.testtest p {
 	overflow: hidden;
+	text-overflow:ellipsis;
+	height:108px;
 }
 </style>
 </head>
